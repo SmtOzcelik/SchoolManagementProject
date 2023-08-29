@@ -10,7 +10,7 @@ public class SametPage {
    public SametPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
+    // yeni gel
     @FindBy(xpath = "//a[@href='/register']")
     public WebElement register;
 

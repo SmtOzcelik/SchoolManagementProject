@@ -10,8 +10,26 @@ public class SametPage {
    public SametPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    // yeni gel
-    @FindBy(xpath = "//a[@href='/register']")
-    public WebElement register;
+
+    @FindBy(xpath = "//a[text()='Contact']")
+    public WebElement contactButon;
+
+    @FindBy(xpath = "//label[text()=\"Your Name\"]")
+    public WebElement yourNameBox;
+
+    @FindBy(xpath = "//label[text()=\"Your Email\"]")
+    public WebElement yourEmailBox;
+
+    @FindBy(xpath = "//label[text()=\"Subject\"]")
+    public WebElement subjectBox;
+
+    @FindBy(xpath = "//label[text()=\"Message\"]")
+    public WebElement messageBox;
+
+    @FindBy(xpath = "//button[text()=\"Send Message\"]")
+    public WebElement sendMessageButon;
+
+    @FindBy(xpath = "//*[text()='Contact Message Created Successfully']")
+    public WebElement successfullyText;
 
 }

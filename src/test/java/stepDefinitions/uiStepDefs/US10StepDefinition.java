@@ -51,12 +51,22 @@ public class US10StepDefinition {
     @Then("Kullanici Add Lesson Program alanindaki Select Lesson menusunden JavaScript dersini secer")
     public void kullaniciAddLessonProgramAlanindakiSelectLessonMenusundenJavaScriptDersiniSecer() {
         //actions.moveToElement(bahadir.selectLesson).perform();
-        ReusableMethods.jsExecutorClick(bahadir.selectLesson);
-        ReusableMethods.waitFor(2);
-        //actions.doubleClick(bahadir.javaScriptDersi);
-        //ReusableMethods.jsExecutorClick(bahadir.javaScriptDersi);
-        bahadir.selectLesson.sendKeys("JavaScript", Keys.ENTER);
-        ReusableMethods.waitFor(2);
+        //ReusableMethods.jsExecutorClick(bahadir.selectLesson);
+        //ReusableMethods.waitFor(2);
+        ////actions.doubleClick(bahadir.javaScriptDersi);
+        ////ReusableMethods.jsExecutorClick(bahadir.javaScriptDersi);
+        //bahadir.selectLesson.sendKeys("JavaScript", Keys.ENTER);
+        //ReusableMethods.waitFor(2);
+
+        //bahadir.selectLesson.click();
+        bahadir.chooseEducationTerm.click();
+        bahadir.chooseEducationTerm.click();
+        //bahadir.chooseEducationTerm.sendKeys(Keys.SHIFT, Keys.TAB, "Music", Keys.ENTER);
+        bahadir.chooseEducationTerm.sendKeys(Keys.SHIFT, Keys.TAB, Keys.DOWN,Keys.ENTER);
+        //ReusableMethods.clickWithJS(bahadir.selectLesson);
+        //ReusableMethods.waitFor(3);
+        //actions.sendKeys(Keys.TAB).perform();
+
 
     }
 }

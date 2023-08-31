@@ -15,7 +15,7 @@ public class US03StepDefinition {
 
     @Given("Kullanici anasayfaya girer")
     public void kullaniciUrlEGirer() {
-        Driver.getDriver().get("https://managementonschools.com/");
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.waitFor(1);
     }
 
@@ -26,6 +26,7 @@ public class US03StepDefinition {
 
     @And("Kullanici Your name kutucuguna gecerli name {string} girer")
     public void kullaniciYourNameKutucugunaGecerliNameGirer(String arg0) {
+        ReusableMethods.jsExecutorScrool(school.yourNameBox);
         school.yourNameBox.sendKeys(arg0);
         
     }

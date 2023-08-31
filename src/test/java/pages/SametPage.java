@@ -14,19 +14,19 @@ public class SametPage {
     @FindBy(xpath = "//a[text()='Contact']")
     public WebElement contactButon;
 
-    @FindBy(xpath = "//label[text()=\"Your Name\"]")
+    @FindBy(xpath = "//input[@id='name']")
     public WebElement yourNameBox;
 
-    @FindBy(xpath = "//label[text()=\"Your Email\"]")
+    @FindBy(xpath = "//input[@id='email']")
     public WebElement yourEmailBox;
 
-    @FindBy(xpath = "//label[text()=\"Subject\"]")
+    @FindBy(xpath = "//input[@id='subject']")
     public WebElement subjectBox;
 
-    @FindBy(xpath = "//label[text()=\"Message\"]")
+    @FindBy(xpath = "//textarea[@id='message']")
     public WebElement messageBox;
 
-    @FindBy(xpath = "//button[text()=\"Send Message\"]")
+    @FindBy(xpath = "//button[text()='Send Message']")
     public WebElement sendMessageButon;
 
     @FindBy(xpath = "//*[text()='Contact Message Created Successfully']")

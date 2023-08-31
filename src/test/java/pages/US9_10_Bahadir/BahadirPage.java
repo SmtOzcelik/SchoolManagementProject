@@ -19,8 +19,16 @@ public class BahadirPage {
     @FindBy(xpath = "//*[@id='controlled-tab-example-tab-lessonProgram']")
     public WebElement lessonProgram;
 
-    @FindBy(xpath = "//*[text()='Select lesson']")
+    //@FindBy(xpath = "//*[text()='Select lesson']")
+    //public WebElement selectLesson;
+
+    @FindBy(xpath = "//*[@class=' css-b62m3t-container']")
     public WebElement selectLesson;
+
+    @FindBy(xpath = "//select[@id='educationTermId']")
+    public WebElement chooseEducationTerm;
+
+
 
     @FindBy(xpath = "(//tbody//td/span)[13]")
     public WebElement javaScriptDersi;

@@ -1,4 +1,4 @@
-package pages;
+package pages.US_03_04;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,10 +26,10 @@ public class SametPage {
     @FindBy(xpath = "//textarea[@id='message']")
     public WebElement messageBox;
 
-    @FindBy(xpath = "//button[text()='Send Message']")
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']")
     public WebElement sendMessageButon;
 
-    @FindBy(xpath = "//*[text()='Contact Message Created Successfully']")
-    public WebElement successfullyText;
+    @FindBy(xpath = "//div[@role='alert']")
+     public WebElement alertMessage;
 
 }

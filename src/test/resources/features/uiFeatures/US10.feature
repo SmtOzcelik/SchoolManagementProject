@@ -21,6 +21,6 @@ Feature: Vice Dean should be able to see the Lesson list
     Then Kullanici Add Lesson Program alanindaki Stop Time bolumune "15:00" degerini girer
     Then Kullanici 3 saniye bekler
     Then Kullanici Submit Butonuna tiklar
-    Then Kullanici 3 saniye bekler
-    #Then Kullanici Created Lesson Program yazisinin gorunurlugunu dogrular
+    #Then Kullanici 3 saniye bekler
+    Then Kullanici Created Lesson Program yazisinin gorunurlugunu dogrular
 

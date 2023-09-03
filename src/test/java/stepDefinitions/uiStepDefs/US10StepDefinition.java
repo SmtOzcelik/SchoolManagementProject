@@ -5,11 +5,13 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import pages.US9_10_Bahadir.BahadirPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class US10StepDefinition {
@@ -96,7 +98,6 @@ public class US10StepDefinition {
 
     @Then("Kullanici Created Lesson Program yazisinin gorunurlugunu dogrular")
     public void kullaniciCreatedLessonProgramYazisininGorunurlugunuDogrular() {
-        //Driver.getDriver().switchTo().alert();
-        assertTrue(bahadir.createdLessonProgram.isDisplayed());
+        Assert.assertTrue(bahadir.alertMessage.getText().contains("Created"));
     }
 }

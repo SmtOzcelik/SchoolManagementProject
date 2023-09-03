@@ -64,5 +64,8 @@ public class BahadirPage {
     @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement createdLessonProgram;
 
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement alertMessage;
+
 
 }

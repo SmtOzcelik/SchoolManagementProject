@@ -194,7 +194,10 @@ public class ReusableMethods {
         // Belirli webElement element seviyesine scroll
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
-
+    public static void clickElementByJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", ReusableMethods.waitForVisibility(element,5));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
     public static void jsExecutorClick(WebElement webElement) {
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();

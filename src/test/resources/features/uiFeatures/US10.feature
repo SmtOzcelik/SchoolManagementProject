@@ -11,5 +11,16 @@ Feature: Vice Dean should be able to see the Lesson list
 
   Scenario: Vice Dean Ders Programi pozitif test
     Then Kullanici Add Lesson Program alanindaki Select Lesson menusunun erisilebilir oldugunu dogrular
-    Then Kullanici Add Lesson Program alanindaki Select Lesson menusunden JavaScript dersini secer
+    Then Kullanici Add Lesson Program alanindaki Select Lesson menusunden en ustteki dersi secer
     Then Kullanici 2 saniye bekler
+    Then Kullanici Add Lesson Program alanindaki Choose Education Term menusunun erisilebilir oldugunu dogrular
+    Then Kullanici Add Lesson Program alanindaki Choose Education Term menusunden "SPRING_SEMESTER" secer
+    Then Kullanici Add Lesson Program alanindaki Choose Day menusunun erisilebilir oldugunu dogrular
+    Then Kullanici Add Lesson Program alanindaki Choose Day menusunden "FRIDAY" secer
+    Then Kullanici Add Lesson Program alanindaki Start Time bolumune "14:30" degerini girer
+    Then Kullanici Add Lesson Program alanindaki Stop Time bolumune "15:00" degerini girer
+    Then Kullanici 3 saniye bekler
+    Then Kullanici Submit Butonuna tiklar
+    Then Kullanici 3 saniye bekler
+    #Then Kullanici Created Lesson Program yazisinin gorunurlugunu dogrular
+

@@ -63,7 +63,7 @@ public class SametPage04 {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement alertMessage;
 
-    @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")
     public WebElement hataliPhoneNumberUyariText;
 
 }

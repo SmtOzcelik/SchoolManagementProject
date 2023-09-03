@@ -92,12 +92,12 @@ public class US10StepDefinition {
 
     @Then("Kullanici Submit Butonuna tiklar")
     public void kullaniciSubmitButonunaTiklar() {
-        ReusableMethods.jsExecutorClick(bahadir.submitButton);
+        ReusableMethods.clickElementByJS(bahadir.submitButton);
     }
 
 
     @Then("Kullanici Created Lesson Program yazisinin gorunurlugunu dogrular")
     public void kullaniciCreatedLessonProgramYazisininGorunurlugunuDogrular() {
-        Assert.assertTrue(bahadir.alertMessage.getText().contains("Created"));
+        Assert.assertEquals(bahadir.alertMessage.getText(), "Created Lesson Program");
     }
 }

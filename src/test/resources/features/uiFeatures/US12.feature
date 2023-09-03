@@ -2,8 +2,8 @@ Feature: US-12 Vice dean can to assign teacher to lesson
   Background: Background: : To Lesson management menü
     Given go to <"managementonschoolUrl">
     Then Click To <"login">
-    Then Enter<"ViceDeanUsernameAykut"> UserName
-    And Enter<"ViceDeanPasswordAykut"> PassWord
+    Then Enter<"ViceDeanUsernameFatih"> UserName
+    And Enter<"ViceDeanPasswordFatih"> PassWord
     Then Click To <"LoginButtonInLoginMenu">
     Then Click To <"menuButton">
     Then Click To <"lessonManagementMenu">

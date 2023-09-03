@@ -31,7 +31,7 @@
       And Kullanici Name girer
       And Kullanici gecerli Password "Ab142788." girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali phone number den dolayi giris yapilamadigini dogrular
 
     Scenario: Negatif gecersiz phone number tc07
 
@@ -49,7 +49,7 @@
       And Kullanici Name girer
       And Kullanici gecerli Password "Ab142788." girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali Ssn number den dolayi giris yapilamadigini dogrular
 
     Scenario: Negatif gecersiz Ssn number tc09
 
@@ -67,7 +67,7 @@
       And Kullanici Name girer
       And Kullanici gecersiz eksik "Ab142" password girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali eksik password den dolayi giris yapilamadigini dogrular
 
     Scenario:  Negatif  gecersiz büyük harf olmadan password tc11
 
@@ -76,7 +76,7 @@
       And Kullanici Name girer
       And Kullanici gecersiz eksik "ab142797" password girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali password buyuk harf olmadıgından dolayi giris yapilamadigini dogrular
 
     Scenario:  Negatif  gecersiz kucuk harf olmadan password tc12
 
@@ -85,7 +85,7 @@
       And Kullanici Name girer
       And Kullanici gecersiz eksik "A12B1478" password girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali password kucuk harf olmadıgından dolayi giris yapilamadigini dogrular
 
     Scenario:  Negatif  gecersiz kucuk ve buyuk harf olmadan password tc13
 
@@ -94,7 +94,7 @@
       And Kullanici Name girer
       And Kullanici gecersiz eksik "12345678" password girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali password kucuk ve buyuk harf olmadıgından dolayi giris yapilamadigini dogrular
 
     Scenario: Negatif  gecersiz rakam olmadan password tc14
 
@@ -103,4 +103,4 @@
       And Kullanici Name girer
       And Kullanici gecersiz eksik "AbDakakg" password girer
       And Kullanici submit butonu tiklar
-      And Kullanici giris yapilamadigini dogrular
+      And Kullanici hatali password rakam olmadıgından dolayi giris yapilamadigini dogrular

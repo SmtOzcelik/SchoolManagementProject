@@ -66,4 +66,18 @@ public class SametPage04 {
     @FindBy(xpath = "//*[text()='Minimum 12 character (XXX-XXX-XXXX)']")
     public WebElement hataliPhoneNumberUyariText;
 
+    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement hataliSsnNumberUyariText;
+
+    @FindBy(xpath = "//*[text()='At least 8 characters']")
+    public WebElement hataliPasswordUyariEksikElemanText;
+
+    @FindBy(xpath = "//*[text()='One uppercase character']")
+    public WebElement hataliPasswordUyariBuyukHarfYokText;
+
+    @FindBy(xpath = "//*[text()='One lowercase character']")
+    public WebElement hataliPasswordUyariKucukHarfYokText;
+
+    @FindBy(xpath = "//*[text()='One number']")
+    public WebElement hataliPasswordUyariNumberYokText;
 }

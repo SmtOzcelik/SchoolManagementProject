@@ -4,14 +4,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import pages.US9_10_Bahadir.BahadirPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class US10StepDefinition {
+    Select select;
     Actions actions = new Actions(Driver.getDriver());
     BahadirPage bahadir = new BahadirPage();
 
@@ -48,25 +54,67 @@ public class US10StepDefinition {
         assertTrue(bahadir.selectLesson.isEnabled());
     }
 
-    @Then("Kullanici Add Lesson Program alanindaki Select Lesson menusunden JavaScript dersini secer")
-    public void kullaniciAddLessonProgramAlanindakiSelectLessonMenusundenJavaScriptDersiniSecer() {
-        //actions.moveToElement(bahadir.selectLesson).perform();
-        //ReusableMethods.jsExecutorClick(bahadir.selectLesson);
-        //ReusableMethods.waitFor(2);
-        ////actions.doubleClick(bahadir.javaScriptDersi);
-        ////ReusableMethods.jsExecutorClick(bahadir.javaScriptDersi);
-        //bahadir.selectLesson.sendKeys("JavaScript", Keys.ENTER);
-        //ReusableMethods.waitFor(2);
 
-        //bahadir.selectLesson.click();
-        bahadir.chooseEducationTerm.click();
-        bahadir.chooseEducationTerm.click();
-        //bahadir.chooseEducationTerm.sendKeys(Keys.SHIFT, Keys.TAB, "Music", Keys.ENTER);
-        bahadir.chooseEducationTerm.sendKeys(Keys.SHIFT, Keys.TAB, Keys.DOWN,Keys.ENTER);
-        //ReusableMethods.clickWithJS(bahadir.selectLesson);
-        //ReusableMethods.waitFor(3);
-        //actions.sendKeys(Keys.TAB).perform();
+    @Then("Kullanici Add Lesson Program alanindaki Select Lesson menusunden en ustteki dersi secer")
+    public void kullaniciAddLessonProgramAlanindakiSelectLessonMenusundenEnUsttekiDersiSecer() {
+        bahadir.chooseEducationTerm.sendKeys(Keys.SHIFT, Keys.TAB, Keys.DOWN, Keys.ENTER);
+    }
+
+    @Then("Kullanici Add Lesson Program alanindaki Choose Education Term menusunun erisilebilir oldugunu dogrular")
+    public void kullaniciAddLessonProgramAlanindakiChooseEducationTermMenusununErisilebilirOldugunuDogrular() {
+        assertTrue(bahadir.chooseDayDDmenu.isEnabled());
+    }
+
+    @Then("Kullanici Add Lesson Program alanindaki Choose Education Term menusunden {string} secer")
+    public void kullaniciAddLessonProgramAlanindakiChooseEducationTermMenusundenSecer(String str) {
+        select = new Select(bahadir.chooseEducationTermDDMenu);
+        select.selectByVisibleText(str);
+    }
+
+    @Then("Kullanici Add Lesson Program alanindaki Choose Day menusunun erisilebilir oldugunu dogrular")
+    public void kullaniciAddLessonProgramAlanindakiChooseDayMenusununErisilebilirOldugunuDogrular() {
+        assertTrue(bahadir.chooseEducationTermDDMenu.isEnabled());
+    }
+
+    @Then("Kullanici Add Lesson Program alanindaki Choose Day menusunden {string} secer")
+    public void kullaniciAddLessonProgramAlanindakiChooseDayMenusundenSecer(String str) {
+        select = new Select(bahadir.chooseDayDDmenu);
+        select.selectByVisibleText(str);
+    }
+
+    @Then("Kullanici Add Lesson Program alanindaki Start Time bolumune {string} degerini girer")
+    public void kullaniciAddLessonProgramAlanindakiStartTimeBolumuneDegeriniGirer(String str) {
+        bahadir.startTime.sendKeys(str);
+    }
+
+    @Then("Kullanici Add Lesson Program alanindaki Stop Time bolumune {string} degerini girer")
+    public void kullaniciAddLessonProgramAlanindakiStopTimeBolumuneDegeriniGirer(String str) {
+        bahadir.stopTime.sendKeys(str);
+    }
+
+    @Then("Kullanici Submit Butonuna tiklar")
+    public void kullaniciSubmitButonunaTiklar() {
+        ReusableMethods.clickElementByJS(bahadir.submitButton);
+    }
 
 
+    @Then("Kullanici Required alanlarinin gorunurlugunu dogrular")
+    public void kullaniciRequiredAlanlarininGorunurlugunuDogrular() {
+        Assert.assertTrue(bahadir.requiredYazisi.isDisplayed());
+    }
+
+    @Then("Kullanici {string} yazisinin gorunurlugunu dogrular")
+    public void kullaniciYazisininGorunurlugunuDogrular(String str) {
+        Assert.assertEquals(bahadir.alertMessage.getText(), str);
+
+    }
+
+    @Then("Kullanici hata mesajinin ekran goruntusunu alir")
+    public void kullaniciHataMesajininEkranGoruntusunuAlir() {
+        try {
+            ReusableMethods.getScreenshotWebElement("ScreenShot", bahadir.alertMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

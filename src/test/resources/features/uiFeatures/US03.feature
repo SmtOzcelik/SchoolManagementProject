@@ -1,5 +1,5 @@
 @Contact
-  Feature: Contact
+  Feature: Contact US03
 
     Background:
      Given Kullanici anasayfaya girer
@@ -37,7 +37,7 @@
 
 
     Scenario: Negatif email tc04 ( . yok)
-
+      # Bu test case de bug var
       And Kullanici Your name kutucuguna gecerli name "samet" girer
       And Kullanici Your email kutucuguna gecersiz mail "smt@gmailcom" girer
       And Kullanici Subject kutucuguna gecerli ders "java" girer

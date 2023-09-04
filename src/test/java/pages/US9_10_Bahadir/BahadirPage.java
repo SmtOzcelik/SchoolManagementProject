@@ -67,5 +67,12 @@ public class BahadirPage {
     @FindBy(xpath = "//*[@role='alert']")
     public WebElement alertMessage;
 
+    //@FindBy(xpath = "//*[text()='You have entered an invalid value. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY']")
+    //public WebElement alertMessageGunler;
+
+
+    @FindBy(xpath = "(//*[text()='Required'])[1]")
+    public WebElement requiredYazisi;
+
 
 }

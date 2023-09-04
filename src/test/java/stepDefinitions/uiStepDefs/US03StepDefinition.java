@@ -35,6 +35,7 @@ public class US03StepDefinition {
 
     @And("Kullanici Your email kutucuguna gecerli mail {string} girer")
     public void kullaniciYourEmailKutucugunaGecerliMailGirer(String arg0) {
+        Driver.wait(1);
         school.yourEmailBox.sendKeys(arg0);
         
     }
@@ -46,18 +47,13 @@ public class US03StepDefinition {
     }
     @And("Kullanici Message kutucuguna gecerli mesaj {string} girer")
     public void kullaniciMessageKutucugunaGecerliMesajGirer(String arg0) {
-        school.messageBox.sendKeys(arg0);
 
+        school.messageBox.sendKeys(arg0);
 
     }
 
     @And("Kullanici Send Message butonuna tiklar")
     public void kullaniciSendMessageButonunaTiklar() {
-        //Actions actions=new Actions(Driver.getDriver());
-        //actions.doubleClick(school.messageBox).sendKeys(Keys.TAB).perform();
-
-        //ReusableMethods.waitFor(2);
-        //actions.sendKeys(Keys.ENTER);
 
         ReusableMethods.clickElementByJS(school.sendMessageButon);
     }
@@ -78,5 +74,6 @@ public class US03StepDefinition {
 
     @And("Kullanici Your email kutucuguna gecersiz mail {string} girer")
     public void kullaniciYourEmailKutucugunaGecersizMailGirer(String arg0) {
+        school.yourEmailBox.sendKeys(arg0);
     }
 }

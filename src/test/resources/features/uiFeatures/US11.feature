@@ -4,7 +4,7 @@ Feature: US-11 Vice dean can to see created Lesson Program
     Given go to <"managementonschoolUrl">
     Then Click To <"login">
     Then Enter<"ViceDeanUsernameFatih"> UserName
-    And Enter<"ViceDeanPasswordFatih"> PassWord
+    And Enter<"ViceDeanUserPasswordFatih"> PassWord
     Then Click To <"LoginButtonInLoginMenu">
     Then Click To <"menuButton">
     Then Click To <"lessonManagementMenu">
@@ -16,7 +16,7 @@ Feature: US-11 Vice dean can to see created Lesson Program
     Then Day is Display
     Then Start Time is Display
     And Stop Time is Display
-    And Close Driver
+   # And Close Driver
 
   Scenario: TC-02 Vice Dean can to change in program list
 

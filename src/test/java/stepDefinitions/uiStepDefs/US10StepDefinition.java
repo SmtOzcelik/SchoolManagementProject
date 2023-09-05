@@ -5,11 +5,15 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import pages.US9_10_Bahadir.BahadirPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class US10StepDefinition {
@@ -90,13 +94,27 @@ public class US10StepDefinition {
 
     @Then("Kullanici Submit Butonuna tiklar")
     public void kullaniciSubmitButonunaTiklar() {
-        ReusableMethods.jsExecutorClick(bahadir.submitButton);
+        ReusableMethods.clickElementByJS(bahadir.submitButton);
     }
 
 
-    @Then("Kullanici Created Lesson Program yazisinin gorunurlugunu dogrular")
-    public void kullaniciCreatedLessonProgramYazisininGorunurlugunuDogrular() {
-        //Driver.getDriver().switchTo().alert();
-        assertTrue(bahadir.createdLessonProgram.isDisplayed());
+    @Then("Kullanici Required alanlarinin gorunurlugunu dogrular")
+    public void kullaniciRequiredAlanlarininGorunurlugunuDogrular() {
+        Assert.assertTrue(bahadir.requiredYazisi.isDisplayed());
+    }
+
+    @Then("Kullanici {string} yazisinin gorunurlugunu dogrular")
+    public void kullaniciYazisininGorunurlugunuDogrular(String str) {
+        Assert.assertEquals(bahadir.alertMessage.getText(), str);
+
+    }
+
+    @Then("Kullanici hata mesajinin ekran goruntusunu alir")
+    public void kullaniciHataMesajininEkranGoruntusunuAlir() {
+        try {
+            ReusableMethods.getScreenshotWebElement("ScreenShot", bahadir.alertMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

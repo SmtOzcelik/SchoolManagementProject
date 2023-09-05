@@ -109,7 +109,7 @@ public class US04StepDefinition {
 
     @And("Kullanici Dean Saved uyarisinin görünürlügünü test eder")
     public void kullaniciDeanSavedUyarisininGörünürlügünüTestEder() {
-        ReusableMethods.waitFor(1);
+        //ReusableMethods.waitFor(1);
         Assert.assertTrue(scholl.alertMessage.getText().contains("Saved"));
 
     }
@@ -120,14 +120,12 @@ public class US04StepDefinition {
         scholl.phoneNumberBox.sendKeys(arg0);
     }
 
-    @And("Kullanici giris yapilamadigini dogrular")
+    @And("Kullanici hatali phone number den dolayi giris yapilamadigini dogrular")
     public void kullaniciHataliPhoneNumberDanDolayiGirisYapilamadiginiDogrular() {
 
         Driver.scrollTopJS();
-        actions.doubleClick(scholl.nameBox);
-        Assert.assertFalse(scholl.nameBox.getText().isEmpty());
-
-
+        actions.doubleClick(scholl.phoneNumberBox);
+        Assert.assertTrue(scholl.hataliPhoneNumberUyariText.getText().contains("Minimum"));
     }
 
     @And("Kullanici Please enter valid phone uyarisinin gorunurlugunu test eder")
@@ -156,4 +154,49 @@ public class US04StepDefinition {
     public void kullaniciGecersizEksikPasswordGirer(String arg0) {
         scholl.passwordBox.sendKeys(arg0);
     }
+
+    @And("Kullanici hatali Ssn number den dolayi giris yapilamadigini dogrular")
+    public void kullaniciHataliSsnNumberDenDolayiGirisYapilamadiginiDogrular() {
+        Driver.scrollTopJS();
+        actions.doubleClick(scholl.ssnBox);
+        Assert.assertTrue(scholl.hataliSsnNumberUyariText.getText().contains("Minimum"));
+
+    }
+
+    @And("Kullanici hatali eksik password den dolayi giris yapilamadigini dogrular")
+    public void kullaniciHataliPasswordDenDolayiGirisYapilamadiginiDogrular() {
+        Driver.scrollTopJS();
+        actions.doubleClick(scholl.passwordBox);
+        Assert.assertTrue(scholl.hataliPasswordUyariEksikElemanText.getText().contains("At least 8 characters"));
+    }
+
+    @And("Kullanici hatali password buyuk harf olmadıgından dolayi giris yapilamadigini dogrular")
+    public void kullaniciHataliPasswordBuyuhHarfOlmadıgındanDolayiGirisYapilamadiginiDogrular() {
+        Driver.scrollTopJS();
+        actions.doubleClick(scholl.passwordBox);
+        Assert.assertTrue(scholl.hataliPasswordUyariBuyukHarfYokText.getText().contains("One uppercase character"));
+    }
+
+    @And("Kullanici hatali password kucuk harf olmadıgından dolayi giris yapilamadigini dogrular")
+    public void kullaniciHataliPasswordKucukHarfOlmadıgındanDolayiGirisYapilamadiginiDogrular() {
+        Driver.scrollTopJS();
+        actions.doubleClick(scholl.phoneNumberBox);
+        Assert.assertTrue(scholl.hataliPasswordUyariKucukHarfYokText.getText().contains("One lowercase character"));
+    }
+
+    @And("Kullanici hatali password kucuk ve buyuk harf olmadıgından dolayi giris yapilamadigini dogrular")
+    public void kullaniciHataliPasswordKucukVeBuyukHarfOlmadıgındanDolayiGirisYapilamadiginiDogrular() {
+        Driver.scrollTopJS();
+        actions.doubleClick(scholl.phoneNumberBox);
+        Assert.assertTrue(scholl.hataliPasswordUyariKucukHarfYokText.getText().contains("One lowercase character"));
+    }
+
+    @And("Kullanici hatali password rakam olmadıgından dolayi giris yapilamadigini dogrular")
+    public void kullaniciHataliPasswordRakamOlmadıgındanDolayiGirisYapilamadiginiDogrular() {
+        Driver.scrollTopJS();
+        actions.doubleClick(scholl.phoneNumberBox);
+        Assert.assertTrue(scholl.hataliPasswordUyariNumberYokText.getText().contains("One number"));
+    }
+
+
 }

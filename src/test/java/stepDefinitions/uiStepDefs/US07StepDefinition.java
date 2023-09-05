@@ -2,10 +2,19 @@ package stepDefinitions.uiStepDefs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import pages.US07_08.ErolPages;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
+
 
 public class US07StepDefinition {
 
@@ -13,56 +22,77 @@ public class US07StepDefinition {
 
     @Given("User goes to {string}")
     public void userGoesTo(String url) {
-        Driver.getDriver().get(ConfigReader.getProperty(url));
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
 
-    @When("User clicks to login button")
+    @Then("User clicks to login button")
     public void userClicksToLoginButton() {
         erol.login.click();
     }
-
-    @When("User enters an Username as {string}")
-    public void userEntersAnUsernameAs(String username) {
-        erol.username.sendKeys();
+    @Then("User enters an deanUsername, password and then is logged in.")
+    public void userEntersAnUsernamePasswordAndThenIsLoggedIn() {
+        erol.username.sendKeys(ConfigReader.getProperty("deanUserName"), Keys.TAB, ConfigReader.getProperty("password"),
+                Keys.TAB, Keys.ENTER);
     }
 
-    @When("User enters a {string}")
-    public void userEntersA(String arg0) {
+    @Then("User waits {int} seconds")
+    public void userWaitsSeconds(int seconds) {
+        ReusableMethods.waitFor(seconds);
     }
 
-    @When("User waits {int} seconds")
-    public void userWaitsSeconds(int arg0) {
-    }
 
-    @When("User clicks login button")
+    @Then("User clicks login button")
     public void userClicksLoginButton() {
+        erol.login.click();
     }
 
-    @And("User click to menu button")
+    @And("User clicks to menu button")
     public void userClickToMenuButton() {
+        erol.menuButton.click();
     }
 
-    @And("User click to {string} button")
-    public void userClickToButton(String arg0) {
+    @And("User clicks to Contact get all button")
+    public void userClickToButton() {
+        erol.contactGetAllButton.click();
+
+
     }
 
-    @And("User tests the visibility of {string} column")
-    public void userTestsTheVisibilityOfColumn(String arg0) {
+    @And("User asserts that if tne name column is visible")
+    public void userAssertsThatIfTneNameColumnVisible() {
+        assertTrue(erol.nameColumn.isDisplayed());
     }
 
-    @And("User tests the visibility of {string} button")
-    public void userTestsTheVisibilityOfButton(String arg0) {
+    @And("User asserts that if tne email column is visible")
+    public void userAssertsThatIfTneEmailColumnVisible() {
+        assertTrue(erol.emailColumn.isDisplayed());
     }
 
-    @And("User clicks to {string} button")
-    public void userClicksToButton(String arg0) {
+    @And("User asserts that if tne date column is visible")
+    public void userAssertsThatIfTneDateColumnVisible() {
+        assertTrue(erol.dateeColumn.isDisplayed());
     }
 
-    @And("User tests if the message has been deleted")
-    public void userTestsIfTheMessageHasBeenDeleted() {
+    @And("User asserts that if tne subject column is visible")
+    public void userAssertsThatIfTneSubjectColumnVisible() {
+        assertTrue(erol.subjectColumn.isDisplayed());
     }
 
+    @And("User asserts that if tne message column is visible")
+    public void userAssertsThatIfTneMessageColumnVisible() {
+        assertTrue(erol.messageColumn.isDisplayed());
+    }
     @And("User closes driver")
     public void userClosesDriver() {
+        Driver.closeDriver();
+    }
+
+    @Then("User enters an viceDeanUsername, password and then is logged in.")
+    public void userEntersAnViceDeanUsernamePasswordAndThenIsLoggedIn() {
+        erol.username.sendKeys(ConfigReader.getProperty("usernameViceDean"), Keys.TAB, ConfigReader.getProperty("password"),
+                Keys.TAB, Keys.ENTER);
     }
 }
+
+
+

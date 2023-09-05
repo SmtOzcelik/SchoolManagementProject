@@ -197,4 +197,6 @@ public class US04StepDefinition {
         actions.doubleClick(scholl.phoneNumberBox);
         Assert.assertTrue(scholl.hataliPasswordUyariNumberYokText.getText().contains("One number"));
     }
+
+
 }

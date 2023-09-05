@@ -11,10 +11,28 @@ public class ErolPages {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@href='/login']")
+    @FindBy(xpath = "//a[@class='header_link ms-2']")
     public WebElement login;
 
     @FindBy(xpath = "//*[@id='username']")
     public WebElement username;
+
+    @FindBy(xpath = "//button[normalize-space()='Menu']")
+    public WebElement menuButton;
+
+    @FindBy(xpath = "(//a[@role='button'])[11]")
+    public WebElement contactGetAllButton;
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

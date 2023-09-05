@@ -1,5 +1,5 @@
 @Dean
-  Feature: Dean kayit
+  Feature: Dean kayit US04
 
     Background:
       Given Kullanici anasayfaya girer

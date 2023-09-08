@@ -21,7 +21,6 @@ public class US04StepDefinition {
     @Then("Kullanici Login  tiklar")
     public void kullaniciLoginTiklar() {
         ReusableMethods.clickElementByJS(scholl.anasayfaLogin);
-
     }
 
     @And("Kullanici User Name girer")
@@ -91,6 +90,7 @@ public class US04StepDefinition {
 
     @And("Kullanici Name girer")
     public void kullaniciNameGirer() {
+
         String fakeUsername = faker.name().username();
         scholl.userNameBox.sendKeys(fakeUsername);
 
@@ -100,6 +100,7 @@ public class US04StepDefinition {
     public void kullaniciPasswordGirer(String arg0) {
         scholl.passwordBox.sendKeys(arg0);
     }
+
     @And("Kullanici submit butonu tiklar")
     public void kullaniciSubmitButonuTiklar() {
 
@@ -111,7 +112,6 @@ public class US04StepDefinition {
     public void kullaniciDeanSavedUyarisininGörünürlügünüTestEder() {
         //ReusableMethods.waitFor(1);
         Assert.assertTrue(scholl.alertMessage.getText().contains("Saved"));
-
     }
 
 

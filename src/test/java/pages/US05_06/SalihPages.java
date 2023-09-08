@@ -34,6 +34,7 @@ public class SalihPages {
     @FindBy(xpath = "//h5")
     public WebElement deanListYazisi;
 
+
     @FindBy(xpath = "//tbody/tr[1]/td[6]/span[1]/button[1]")
     public WebElement deanTeam11Edit;
 
@@ -81,6 +82,11 @@ public class SalihPages {
 
 
 
+
+
+
+    @FindBy(xpath = "//*[@id=root]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[7]/td[6]/span/button")
+    public WebElement deanTeam11Edit;
 
 
 }

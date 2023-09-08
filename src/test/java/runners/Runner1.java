@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                            "rerun:TestOutput/failed_scenario.txt"},
         features = "src/test/resources/features",
         glue = {"techproed/stepDefinition"},
-        tags = "",
+        tags = "US08TC02",
         dryRun = false,
         monochrome = true
 

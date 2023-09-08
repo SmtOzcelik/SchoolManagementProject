@@ -24,7 +24,7 @@ public class Hooks {
     public void setUp(){
         spec = new RequestSpecBuilder().setBaseUri("https://automationexercise.com/").build();
     }
-
+/*
     @After
     public void tearDown(Scenario scenario){
         final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -32,6 +32,9 @@ public class Hooks {
             scenario.attach(screenshot, "image/png","screenshots");
         }
         Driver.closeDriver();
+
+
     }
+*/
 }
 

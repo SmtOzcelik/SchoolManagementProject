@@ -68,6 +68,13 @@ public class US05StepDefinition {
 
     }
 
+
+
+    @And("dean'leri guncelleyebilmeli ve guncellendigini dogrulamali")
+    public void deanLeriGuncelleyebilmeliVeGuncellendiginiDogrulamali() {
+    ReusableMethods.clickElementByJS(schoolManagement.deanListYazisi);
+
+
     @And("dean'leri silebilmeli ve silindigini dogrulamali")
     public void deanLeriSilebilmeliVeSilindiginiDogrulamali() throws IOException {
        //ReusableMethods.jsExecutorScrool(schoolManagement.deanTeam11Edit);
@@ -80,6 +87,7 @@ public class US05StepDefinition {
     public void deanLeriGuncelleyebilmeliVeGuncellendiginiDogrulamali() {
 
        actions.moveToElement(schoolManagement.deanTeam11Edit).perform();
+
 
 
     }

@@ -7,7 +7,6 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-import static org.junit.Assert.assertTrue;
 
 public class US09StepDefinition {
     SoftAssert softAssert = new SoftAssert();

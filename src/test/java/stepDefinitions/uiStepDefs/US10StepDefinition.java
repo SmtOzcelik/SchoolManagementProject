@@ -106,7 +106,7 @@ public class US10StepDefinition {
     @Then("Kullanici {string} yazisinin gorunurlugunu dogrular")
     public void kullaniciYazisininGorunurlugunuDogrular(String str) {
         Assert.assertEquals(bahadir.alertMessage.getText(), str);
-
+        ReusableMethods.waitFor(2);
     }
 
     @Then("Kullanici hata mesajinin ekran goruntusunu alir")

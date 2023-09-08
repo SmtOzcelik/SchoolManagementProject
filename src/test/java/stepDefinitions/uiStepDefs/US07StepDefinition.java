@@ -92,6 +92,12 @@ public class US07StepDefinition {
         erol.username.sendKeys(ConfigReader.getProperty("usernameViceDean"), Keys.TAB, ConfigReader.getProperty("password"),
                 Keys.TAB, Keys.ENTER);
     }
+
+    @Then("User enters an adminUsername, password and then is logged in.")
+    public void userEntersAnAdminUsernamePasswordAndThenIsLoggedIn() {
+        erol.username.sendKeys(ConfigReader.getProperty("adminUserName"), Keys.TAB, ConfigReader.getProperty("password"),
+                Keys.TAB, Keys.ENTER);
+    }
 }
 
 

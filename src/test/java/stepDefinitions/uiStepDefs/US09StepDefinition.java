@@ -2,7 +2,7 @@ package stepDefinitions.uiStepDefs;
 
 import io.cucumber.java.en.Then;
 import org.testng.asserts.SoftAssert;
-import pages.US9_10_Bahadir.BahadirPage;
+import pages.US_9_10_24.BahadirPage;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -32,16 +32,6 @@ public class US09StepDefinition {
         }
     }
 
-    @Then("Kullanici Cypress dersinin yanindaki silme butonuna tiklar")
-    public void kullaniciCypressDersininYanindakiSilmeButonunaTiklar() {
-
-    }
-
-
-    @Then("Kullanici Cypress dersinin silinmedigini dogrular")
-    public void kullaniciCypressDersininSilinmediginiDogrular() {
-
-    }
 
     @Then("Kullanici Java dersinin yanindaki silme butonuna tiklar")
     public void kullaniciJavaDersininYanindakiSilmeButonunaTiklar() {

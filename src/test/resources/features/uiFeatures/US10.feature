@@ -58,7 +58,7 @@ Feature: Vice Dean should be able to see the Lesson list
     Then Kullanici hata mesajinin ekran goruntusunu alir
 
   @Negatif
-  Scenario: Vice Dean Ders Programi pozitif test
+  Scenario: Vice Dean Zorunlu Alanlari Doldurmadan Ders Programi Olusturamamalı (Negatif test)
     Then Kullanici Add Lesson Program alanindaki Select Lesson menusunun erisilebilir oldugunu dogrular
     Then Kullanici Add Lesson Program alanindaki Select Lesson menusunden en ustteki dersi secer
     Then Kullanici 2 saniye bekler

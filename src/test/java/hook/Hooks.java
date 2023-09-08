@@ -1,6 +1,5 @@
 package hook;
 
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -22,7 +21,7 @@ public class Hooks {
     RequestSpecification spec;
     @Before(value = "@us01")
     public void setUp(){
-        spec = new RequestSpecBuilder().setBaseUri("https://automationexercise.com/").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/").build();
     }
 
     @After

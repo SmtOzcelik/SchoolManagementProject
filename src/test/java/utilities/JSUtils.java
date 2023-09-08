@@ -110,5 +110,9 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("arguments[0].style.border='"+borderStyle+"'",element);
     }
+    public static void clickWithTimeoutByJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", WaitUtils.waitForVisibility(element,5));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
 
 }

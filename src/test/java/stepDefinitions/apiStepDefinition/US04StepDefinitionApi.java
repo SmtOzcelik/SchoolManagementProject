@@ -58,6 +58,5 @@ public class US04StepDefinitionApi {
         US04Dean_User_Pojo actualData=response.as(US04Dean_User_Pojo.class);
         System.out.println("actualData = " + actualData);
 
-
     }
 }

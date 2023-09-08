@@ -18,9 +18,9 @@ import org.junit.runner.RunWith;
         },
         monochrome = true, //raporlarin consolda okunakli sekilde cikmasi icin
         features = "./src/test/resources/features",  //features folder path
-        glue = {"stepDefinitions", "hooks"},//stepdefinitions path
+        glue = {"stepDefinitions/uiStepDefs"},//stepdefinitions path
 
-        tags = "",
+        tags = "@Negatif",
         dryRun = false
 
 

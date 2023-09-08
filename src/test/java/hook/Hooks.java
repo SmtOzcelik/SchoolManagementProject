@@ -21,7 +21,7 @@ public class Hooks {
     RequestSpecification spec;
     @Before(value = "@us01")
     public void setUp(){
-        spec = new RequestSpecBuilder().setBaseUri("https://automationexercise.com/").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/").build();
     }
 
     @After

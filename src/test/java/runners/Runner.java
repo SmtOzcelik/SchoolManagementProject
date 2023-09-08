@@ -18,12 +18,9 @@ import org.junit.runner.RunWith;
         },
         monochrome = true, //raporlarin consolda okunakli sekilde cikmasi icin
         features = "./src/test/resources/features",  //features folder path
-        glue = {"stepDefinitions/uiStepDefs"},//stepdefinitions path
-
+         glue = {"stepDefinitions/uiStepDefs"},//stepdefinitions path
         tags = "@Negatif",
         dryRun = false
-
-
 )
 
 public class Runner {

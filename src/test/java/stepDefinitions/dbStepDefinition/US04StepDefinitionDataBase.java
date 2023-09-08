@@ -98,7 +98,7 @@ public class US04StepDefinitionDataBase {
     @Then("Kullanici datebase e query gonderir ve username ile alır")
     public void kullaniciDatebaseEQueryGonderirVeUsernameIleAlır() throws SQLException {
 
-        String query="select * from guest_user where username ='"+fakerUserName+"'";
+        String query="select * from dean where username ='"+fakerUserName+"'";
 
         // query dönüyor mu kontrol amaçlı execute(query) kullanilabilir true ya da false döner
         System.out.println("query dönüyor mu ? "+execute(query));
@@ -113,6 +113,7 @@ public class US04StepDefinitionDataBase {
     public void kullaniciDogrulamalırıGercekleştirir(String name, String surname, String birthPlace, String phoneNumber, String gender, String birthday, String ssn, String username, String password) throws SQLException {
 
         resultSet.next();
+
         String actualName=resultSet.getString("name");
         System.out.println("actualName = " + actualName);
         String actualSurname=resultSet.getString("surname");

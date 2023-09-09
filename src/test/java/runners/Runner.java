@@ -7,25 +7,17 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = {
-        "pretty",//raporlarin daha okunakli olmasi icin
+@CucumberOptions(plugin = {"pretty",
         "html:target/default-cucumber-reports.html",
-        "json:target/json-reports/cucumber.json",
-        "junit:target/xml-report/cucumber.xml" ,
-        "rerun:target/failed_scenarios.txt",
-        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-        },
-        monochrome=true, //raporlarin consolda okunakli sekilde cikmasi icin
-        features = "./src/test/resources/features",  //features folder path
-        glue = {"stepDefinitions","hooks"},//stepdefinitions path
-<<<<<<< HEAD
-        tags = "@US_13_TC_01",
-=======
-
-        tags = "",
->>>>>>> 664df31739208dda4531f2080d987959517d0c1a
-        dryRun = true
+        "json:target/json-reports/cucumber1.json",
+        "junit:target/xml-report/cucumber.xml",
+        "rerun:TestOutput/failed_scenario.txt"},
+        //rerun ile belirttiğimiz dosyada fail olan senaryolar tutulur.
+        features = "src/test/resources/features/uiFeatures",
+        glue = {"stepDefinitions/uiStepDefs"},
+        tags = "@US07",
+        dryRun = false,//-->true seçersek scenarioları kontrol eder browser'ı çalıştırmaz
+        monochrome = true//-->true kullanırsak konsoldaki çıktılar tek renk(siyah) olur
 )
 
 public class Runner {

@@ -5,7 +5,7 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 import utilities.Authentication;
 
-class AutomationExerciseUrl extends Authentication {
+class ManagementSchoolUrl extends Authentication {
 
 protected RequestSpecification spec;
 

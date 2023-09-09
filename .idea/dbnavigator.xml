@@ -16,7 +16,7 @@
       <console name="Connection" type="STANDARD" schema="school_management" session="Main" />
     </connection>
     <connection id="58fb7953-a34b-4342-933b-0c7b2e89a10a">
-      <console name="managementonSchools" type="STANDARD" schema="school_management" session="Main"><![CDATA[select * from admins where username='AdminSamet']]></console>
+      <console name="managementonSchools" type="STANDARD" schema="school_management" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">

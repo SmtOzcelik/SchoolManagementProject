@@ -72,7 +72,8 @@ public class US05StepDefinition {
 
     @And("dean'leri guncelleyebilmeli ve guncellendigini dogrulamali")
     public void deanLeriGuncelleyebilmeliVeGuncellendiginiDogrulamali() {
-    ReusableMethods.clickElementByJS(schoolManagement.deanListYazisi);
+        ReusableMethods.clickElementByJS(schoolManagement.deanListYazisi);
+    }
 
 
     @And("dean'leri silebilmeli ve silindigini dogrulamali")

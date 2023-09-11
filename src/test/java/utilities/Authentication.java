@@ -22,8 +22,8 @@ public class Authentication {
  
 
     public static String generateToken() {
-        String username = "AdminSamet";
-        String password = "Ab142790";
+        String username = "AdminErol11";
+        String password = "Aa123456";
 
         Map <String, Object> map = new HashMap<>();
         map.put("username", username);

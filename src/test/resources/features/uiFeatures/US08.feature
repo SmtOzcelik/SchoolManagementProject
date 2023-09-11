@@ -28,7 +28,6 @@ Feature: Vice Dean Lesson Create Process
     And User writes a credit ccore in credit score box
     And User clicks submit button
     And User asserts that if tne lesson is created
-    And User closes driver
 
 
 

@@ -21,7 +21,7 @@ public class US04StepDefinitionApi {
     @Given("Kullanici path params olusturur")
     public void kullaniciPathParamsOlusturur() {
 
-        spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/app").build();
         spec.pathParams("1", "dean", "2", "save");
 
     }

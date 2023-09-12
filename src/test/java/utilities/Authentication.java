@@ -13,30 +13,28 @@ public class Authentication {
 
 
 
-  /*  public static void main(String[] args) {
+   public static void main(String[] args) {
 
        String guncelToken = generateToken();
-       System.out.println(guncelToken);
-   }*/
+       System.out.println("guncelToken = "+guncelToken);
+   }
 
  
 
     public static String generateToken() {
-        String username = "AdminErol11";
-        String password = "Aa123456";
 
-        Map <String, Object> map = new HashMap<>();
-        map.put("username", username);
-        map.put("password",password);
-        map.put("rememberme","true");
 
-        String endPoint = "https://managementonschools.com";
 
-        Response response1 = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
+            String body = "{ \"password\": \"Ab142790\", " +
+                    "\"username\": \"AdminSamet\" }";
 
-        JsonPath token = response1.jsonPath();
+            Response response = given()
+                    .body(body)
+                    .contentType(ContentType.JSON)
+                    .post("https://managementonschools.com/app/auth/login");
+            //response.prettyPrint();
+            return response.jsonPath().getString("token");
+        }
 
-        return token.getString("id_token");
 
-    }
 }

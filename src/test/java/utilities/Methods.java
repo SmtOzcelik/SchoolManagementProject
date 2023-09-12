@@ -44,5 +44,29 @@ public class Methods {
             bahadir.password.sendKeys(passwordValue);
         }
         return this;
+
+    }
+
+
+    public static boolean validateSSN(String ssn) {
+        // SSN boş olamaz ve uzunluğu 11 olmalıdır (3 rakam, 1 '-', 2 rakam, 1 '-', 4 rakam)
+        if (ssn != null && ssn.length() == 11) {
+            // İstenen pozisyonlarda '-' karakteri olup olmadığını kontrol et
+            if (ssn.charAt(3) == '-' && ssn.charAt(6) == '-') {
+                // Rakamları kontrol et
+                for (int i = 0; i < ssn.length(); i++) {
+                    char c = ssn.charAt(i);
+                    if (i == 3 || i == 6) {
+                        continue; // '-' karakterlerini atla
+                    }
+                    if (!Character.isDigit(c)) {
+                        return false; // Rakam değilse geçerli değil
+                    }
+                }
+                return true; // Tüm kontrolleri geçtiyse geçerli
+            }
+        }
+        return false; // Diğer koşulları sağlamıyorsa geçerli değil
     }
 }
+

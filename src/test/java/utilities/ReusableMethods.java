@@ -303,5 +303,41 @@ public class ReusableMethods {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
         //((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
+
+
+    //hard wait alper
+    public static void bekle(int saniye){
+        try {
+            Thread.sleep(saniye*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    /** alper
+     bu metot ekrani bir masue tekeri donmesi kadar asagi kaydirir
+     */
+    public static void pageDown() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+    }
+    /** alper
+     bu metot ekrani bir masue tekeri donmesi kadar yukari kaydirir
+     */
+    public static void pageUp() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_UP).perform();
+    }
+
+    /** alper
+     bu metot ekrani bir tik asagi kaydirir
+     */
+    public static void arrowDown() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+    }
+
+
+
 }
 

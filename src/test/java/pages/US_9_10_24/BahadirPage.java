@@ -123,6 +123,15 @@ public class BahadirPage {
     @FindBy(xpath = "//a[text()='Student Management']")
     public WebElement studentMannagement;
 
+    @FindBy(xpath = "//*[text()='Logout']")
+    public WebElement logOut;
+
+    @FindBy(xpath = "//*[text()='Yes']")
+    public WebElement yesButton;
+
+
+
+
     //Lis bolumu locetleri
     //List baslik
     @FindBy(xpath = "(//tr[1]//th[1])[1]")
@@ -296,6 +305,9 @@ public class BahadirPage {
     @FindBy(xpath = "//*[@id='ssn']")
     public WebElement ssn;
 
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[7]")
+    public WebElement ssnmissingmessage;
+
     //User Name alanı
     @FindBy(css = "#username")
     private WebElement userName;
@@ -314,8 +326,14 @@ public class BahadirPage {
     //Olusturdugun  Studentin oldugu satira gitmek icin listedeki son sayfaya giden tus
     @FindBy(xpath = "//*[.='Last']")
     public WebElement listeSonuButonu;
+
     @FindBy(xpath = "(//tr)[last()]")
     public WebElement listSonSatir;
+
+    @FindBy(xpath = "//*[@type='checkbox']")
+    public WebElement isAdvicerTeacherCheckbox;
+
+
 
 
 }

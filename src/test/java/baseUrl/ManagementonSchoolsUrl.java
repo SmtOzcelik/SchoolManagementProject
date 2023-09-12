@@ -11,6 +11,6 @@ protected RequestSpecification spec;
 
 @Before
 public void setup() {
-   spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/app/").build();
+   spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/app").build();
 }
 }

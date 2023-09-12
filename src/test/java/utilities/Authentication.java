@@ -15,8 +15,8 @@ public class Authentication {
 
    public static void main(String[] args) {
 
-       String guncelToken = generateToken();
-       System.out.println("guncelToken = "+guncelToken);
+       //String guncelToken = generateToken();
+       //System.out.println("guncelToken = "+guncelToken);
    }
 
  

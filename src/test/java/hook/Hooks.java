@@ -29,6 +29,7 @@ public class Hooks {
             scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/jpeg", "scenario_" + scenario.getName());
             Driver.closeDriver();
         }
+        Driver.closeDriver();
 
 
     }

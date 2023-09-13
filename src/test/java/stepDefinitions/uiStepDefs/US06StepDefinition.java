@@ -62,6 +62,7 @@ public class US06StepDefinition {
     @Then("Kullanici ekleme isleminin basarili olugunu dogrular")
     public void kullaniciEklemeIslemininBasariliOlugunuDogrular() {
         Assert.assertTrue(sManagement.alertMessage.getText().contains("Vice dean Saved"));
+
     }
 
 

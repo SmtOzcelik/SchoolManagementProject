@@ -29,9 +29,9 @@ public class US07StepDefinition {
     public void userClicksToLoginButton() {
         erol.login.click();
     }
-    @Then("User enters an deanUsername, password and then is logged in.")
+    @Then("User enters an adminUsername, password and then is logged in.")
     public void userEntersAnUsernamePasswordAndThenIsLoggedIn() {
-        erol.username.sendKeys(ConfigReader.getProperty("deanUserName"), Keys.TAB, ConfigReader.getProperty("password"),
+        erol.username.sendKeys(ConfigReader.getProperty("adminUserName"), Keys.TAB, ConfigReader.getProperty("password"),
                 Keys.TAB, Keys.ENTER);
     }
 
@@ -92,6 +92,8 @@ public class US07StepDefinition {
         erol.username.sendKeys(ConfigReader.getProperty("usernameViceDean"), Keys.TAB, ConfigReader.getProperty("password"),
                 Keys.TAB, Keys.ENTER);
     }
+
+
 }
 
 

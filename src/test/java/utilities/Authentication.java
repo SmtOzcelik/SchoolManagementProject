@@ -11,32 +11,17 @@ import static io.restassured.RestAssured.given;
 
 public class Authentication {
 
+        public static String generateToken (String passWord, String userName ){
+            String urlswagger = "https://managementonschools.com/app/auth/login";
+            Map<String, String> token = new HashMap<>();
+            token.put("password", passWord);
+            token.put("username", userName);
 
 
-  /*  public static void main(String[] args) {
+            Response response = given().contentType(ContentType.JSON).body(token).when().post(urlswagger);
+            response.prettyPrint();
+            return response.jsonPath().getString("token");
+        }
 
-       String guncelToken = generateToken();
-       System.out.println(guncelToken);
-   }*/
 
- 
-
-    public static String generateToken() {
-        String username = "AdminSamet";
-        String password = "Ab142790";
-
-        Map <String, Object> map = new HashMap<>();
-        map.put("username", username);
-        map.put("password",password);
-        map.put("rememberme","true");
-
-        String endPoint = "https://managementonschools.com";
-
-        Response response1 = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
-
-        JsonPath token = response1.jsonPath();
-
-        return token.getString("id_token");
-
-    }
 }

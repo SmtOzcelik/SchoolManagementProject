@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import pages.US9_10_Bahadir.BahadirPage;
+import pages.US_9_10_24.BahadirPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -106,7 +106,7 @@ public class US10StepDefinition {
     @Then("Kullanici {string} yazisinin gorunurlugunu dogrular")
     public void kullaniciYazisininGorunurlugunuDogrular(String str) {
         Assert.assertEquals(bahadir.alertMessage.getText(), str);
-
+        ReusableMethods.waitFor(2);
     }
 
     @Then("Kullanici hata mesajinin ekran goruntusunu alir")

@@ -2,28 +2,30 @@ package stepDefinitions.apiStepDefinition;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
+import org.junit.Assert;
+import pojos.US04Pojo.US04PostPojo;
+import pojos.US04Pojo.US04ResponsePojo;
+
 import io.restassured.specification.RequestSpecification;
-import pojos.US04Pojo.US04Dean_User_Pojo;
+
 import utilities.ConfigReader;
 
 import static io.restassured.RestAssured.authentication;
 import static io.restassured.RestAssured.given;
-import static utilities.Authentication.generateToken;
-
+import static baseUrl.ManagementSchoolUrl.spec;
 
 public class US04StepDefinitionApi {
-    RequestSpecification spec;
+
     Faker faker=new Faker();
     Response response;
-    US04Dean_User_Pojo expectedData=new US04Dean_User_Pojo();
+    US04PostPojo expectedData=new US04PostPojo();
+    US04ResponsePojo actualDate;
 
     @Given("Kullanici path params olusturur")
     public void kullaniciPathParamsOlusturur() {
 
-        spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/app").build();
         spec.pathParams("1", "dean", "2", "save");
 
     }
@@ -48,17 +50,24 @@ public class US04StepDefinitionApi {
 
     @When("Kullanici request gonderir response alir.")
     public void kullaniciRequestGonderirResponseAlir() {
-        response = given().spec(spec).contentType(ContentType.JSON).
-                header("Authorization",generateToken(ConfigReader.getProperty("usernameAdmin"), ConfigReader.getProperty("password"))).
-                body(expectedData).post("/{1}/{2}");
+
+        response = given(spec).body(expectedData).when().post("{1}/{2}");
+        actualDate=response.as(US04ResponsePojo.class);
+
+
     }
 
     @And("Kullanici kayitlari dogrular.")
     public void kullaniciKayitlariDogrular() {
-        //response.then().assertThat().statusCode(200);
-        System.out.println("response.getStatusCode() = " + response.getStatusCode());
-        US04Dean_User_Pojo actualData=response.as(US04Dean_User_Pojo.class);
-        System.out.println("actualData = " + actualData);
-
+        response.then().assertThat().statusCode(200);
+        Assert.assertEquals(expectedData.getBirthDay(),actualDate.getObject().getBirthDay());
+        Assert.assertEquals(expectedData.getBirthPlace(),actualDate.getObject().getBirthPlace());
+        Assert.assertEquals(expectedData.getUsername(),actualDate.getObject().getUsername());
+        Assert.assertEquals(expectedData.getName(),actualDate.getObject().getName());
+        Assert.assertEquals(expectedData.getGender(),actualDate.getObject().getGender());
+        Assert.assertEquals(expectedData.getSsn(),actualDate.getObject().getSsn());
+        Assert.assertEquals(expectedData.getPhoneNumber(),actualDate.getObject().getPhoneNumber());
+        Assert.assertEquals(expectedData.getSurname(),actualDate.getObject().getSurname());
+        Assert.assertEquals("Dean Saved",actualDate.getMessage());
     }
 }

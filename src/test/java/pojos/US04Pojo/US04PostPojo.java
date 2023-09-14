@@ -3,7 +3,7 @@ package pojos.US04Pojo;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class US04Dean_User_Pojo {
+public class US04PostPojo {
 
     private String birthDay;
     private String birthPlace;
@@ -15,10 +15,10 @@ public class US04Dean_User_Pojo {
     private String surname;
     private String username;
 
-    public US04Dean_User_Pojo() {
+    public US04PostPojo() {
     }
 
-    public US04Dean_User_Pojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+    public US04PostPojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
         this.birthDay = birthDay;
         this.birthPlace = birthPlace;
         this.gender = gender;

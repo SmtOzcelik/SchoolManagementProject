@@ -7,7 +7,9 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import pojos.US04Pojo.US04Dean_User_Pojo;
+import utilities.ConfigReader;
 
+import static io.restassured.RestAssured.authentication;
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
 
@@ -47,7 +49,7 @@ public class US04StepDefinitionApi {
     @When("Kullanici request gonderir response alir.")
     public void kullaniciRequestGonderirResponseAlir() {
         response = given().spec(spec).contentType(ContentType.JSON).
-                header("Authorization","Bearer "+ generateToken()).
+                header("Authorization",generateToken(ConfigReader.getProperty("usernameAdmin"), ConfigReader.getProperty("password"))).
                 body(expectedData).post("/{1}/{2}");
     }
 

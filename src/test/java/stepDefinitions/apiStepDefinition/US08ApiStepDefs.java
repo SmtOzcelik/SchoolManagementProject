@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 import pojos.US08Pojo.US08LessonPojo;
+import pojos.US08__POJOSXX.US08HistoryLessonPojo;
 
 import static baseUrl.ManagementSchoolUrl.spec;
 import static io.restassured.RestAssured.given;
@@ -17,7 +18,7 @@ public class US08ApiStepDefs {
      @Given("Do get request with lessonName {string}")
     public void doGetRequestWithLessonName(String lessonName) {
         spec.pathParams("first","lessons","second","getLessonByName")
-                .queryParams("lessonName","Calculus");
+                .queryParams("lessonName","History of World");
         response = given(spec).get("{first}/{second}");
         response.prettyPrint();
     }
@@ -25,7 +26,7 @@ public class US08ApiStepDefs {
     @Then("Verify lesson body that return: lessonId={string}, lessonName={string}, creditScore={string},  compulsory={string}, message={string}")
     public void verifyLessonBodyThatReturnLessonIdLessonNameCreditScoreCompulsoryMessage(String lessonId, String lessonName, String creditScore, String compulsory, String message) throws JsonProcessingException {
         //Response'ı LessonPojo class'a çevirerek scenario outline'dan gelen data ile doğruluyorum:
-        US08LessonPojo actualData = new ObjectMapper().readValue(response.asString(), US08LessonPojo.class);//De-Serialization
+        US08HistoryLessonPojo actualData = new ObjectMapper().readValue(response.asString(), US08HistoryLessonPojo.class);//De-Serialization
         System.out.println("actualData = " + actualData);
 
         assertEquals(200,response.statusCode());

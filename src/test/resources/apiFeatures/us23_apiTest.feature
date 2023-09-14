@@ -1,3 +1,4 @@
+@admin
 Feature: Admin can create Vice Dean account
 
   Scenario Outline: Verify ViceDean account that is created (Api)

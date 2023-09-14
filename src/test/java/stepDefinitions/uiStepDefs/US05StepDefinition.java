@@ -81,18 +81,6 @@ public class US05StepDefinition {
        //ReusableMethods.jsExecutorScrool(schoolManagement.deanTeam11Edit);
        ReusableMethods.getScreenshot("schoolManagement.deanTablo");
 
-
     }
-
-    @And("dean'leri guncelleyebilmeli ve guncellendigini dogrulamali")
-    public void deanLeriGuncelleyebilmeliVeGuncellendiginiDogrulamali() {
-
-       actions.moveToElement(schoolManagement.deanTeam11Edit).perform();
-
-
-
-    }
-
-
 
 }

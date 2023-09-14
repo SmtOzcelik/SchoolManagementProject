@@ -3,10 +3,16 @@ package stepDefinitions.apiStepDefinition;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
+
 import org.junit.Assert;
 import pojos.US04Pojo.US04PostPojo;
 import pojos.US04Pojo.US04ResponsePojo;
 
+import io.restassured.specification.RequestSpecification;
+
+import utilities.ConfigReader;
+
+import static io.restassured.RestAssured.authentication;
 import static io.restassured.RestAssured.given;
 import static baseUrl.ManagementSchoolUrl.spec;
 
@@ -44,8 +50,11 @@ public class US04StepDefinitionApi {
 
     @When("Kullanici request gonderir response alir.")
     public void kullaniciRequestGonderirResponseAlir() {
+
         response = given(spec).body(expectedData).when().post("{1}/{2}");
         actualDate=response.as(US04ResponsePojo.class);
+
+
     }
 
     @And("Kullanici kayitlari dogrular.")

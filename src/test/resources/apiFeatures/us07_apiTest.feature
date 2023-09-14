@@ -1,4 +1,4 @@
-@US07Api @Api @US07E2E
+@dean @US07Api @Api @US07E2E
 
   Feature: Dean can see message that users sent
   Scenario Outline: US07 Verify get contact message

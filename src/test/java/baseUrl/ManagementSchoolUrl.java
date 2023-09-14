@@ -14,31 +14,31 @@ public class ManagementSchoolUrl extends Authentication {
 
     public static void adminSetup() {
 
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("Password"), ConfigReader.getProperty("UsernameAdmin"))).
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("usernameAdmin"))).
                 setBaseUri("https://managementonschools.com/app").build();
     } //setContentType() kismi post isleminin duzgun calismasi icin
 
     public static void deanSetup() {
 
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("Password"), ConfigReader.getProperty("usernameDean"))).
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("usernameDean"))).
                 setBaseUri("https://managementonschools.com/app").build();
     }
 
     public static void vicedeanSetup() {
 
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("Password"), ConfigReader.getProperty("usernameViceDean"))).
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("usernameViceDean"))).
                 setBaseUri("https://managementonschools.com/app").build();
     }
 
     public static void teacherSetup() {
 
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("Password"), ConfigReader.getProperty("UsernameTeacher"))).
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("usernameTeacher"))).
                 setBaseUri("https://managementonschools.com/app").build();
     }
 
     public static void studentSetup() {
 
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("Password"), ConfigReader.getProperty("UsernameStudent"))).
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("usernameStudent"))).
                 setBaseUri("https://managementonschools.com/app").build();
     }
 }

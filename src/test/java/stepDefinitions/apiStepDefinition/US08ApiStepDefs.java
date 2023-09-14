@@ -17,7 +17,7 @@ public class US08ApiStepDefs {
      @Given("Do get request with lessonName {string}")
     public void doGetRequestWithLessonName(String lessonName) {
         spec.pathParams("first","lessons","second","getLessonByName")
-                .queryParams("lessonName","History of World");
+                .queryParams("lessonName","Calculus");
         response = given(spec).get("{first}/{second}");
         response.prettyPrint();
     }

@@ -1,20 +1,98 @@
 package stepDefinitions.apiStepDefinition;
 
-import com.github.javafaker.Faker;
+import baseUrl.ManagementSchoolUrl;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import org.junit.Assert;
-import pojos.US04Pojo.US04PostPojo;
-import pojos.US04Pojo.US04ResponsePojo;
-
+import pojos.US10Pojo.US10_ViceDeanResponsePojo;
+import pojos.US10Pojo.US10_ViceDeanPostPojo;
 import static baseUrl.ManagementSchoolUrl.spec;
+
+import java.util.Collections;
+
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+
 
 public class US10StepDefinitionApi {
+    US10_ViceDeanPostPojo expectedData;
+    Response response;
+    US10_ViceDeanResponsePojo actualData;
+    public static int kayitliLessonProgramId;
 
-    Faker faker=new Faker();
+
+    @Given("ders programi olusturmak icin POST request hazirligi yapilir")
+    public void dersProgramiOlusturmakIcinPOSTRequestHazirligiYapilir() {
+        //Set the URL
+        spec.pathParams("first", "lessonPrograms", "second", "save");
+    }
+
+    @And("gonderilecek ders programi bilgileri hazirlanir")
+    public void gonderilecekDersProgramiBilgileriHazirlanir() {
+        /*
+        {
+    "day": "WEDNESDAY",
+    "educationTermId": "1",
+    "lessonIdList": [
+        "5"
+    ],
+    "startTime": "16:00",
+    "stopTime": "18:00"
+}
+         */
+        //Set the expected data
+        expectedData = new US10_ViceDeanPostPojo("WEDNESDAY", "1",
+                Collections.singletonList("5"), "16:00", "18:00");
+    }
+
+    @When("ders programi olusturmak icin POST request gonderilir")
+    public void dersProgramiOlusturmakIcinPOSTRequestGonderilir() {
+        //Send the request
+        response = given(spec).body(expectedData).when().post("{first}/{second}");
+    }
+
+    @Then("olusturulan ders programi bilgileri dogrulanir")
+    public void olusturulanDersProgramiBilgileriDogrulanir() {
+        //Get the response and do assertion
+        actualData = response.as(US10_ViceDeanResponsePojo.class);
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedData.getDay(), actualData.getObject().getDay());
+        assertEquals("Created Lesson Program", actualData.getMessage());
+        assertEquals("CREATED", actualData.getHttpStatus());
+        kayitliLessonProgramId = actualData.getObject().getLessonProgramId();
+    }
+
+
+    /*
+    {
+    "object": {
+        "lessonProgramId": 693,
+        "startTime": "16:00:00",
+        "stopTime": "18:00:00",
+        "lessonName": [
+            {
+                "lessonId": 5,
+                "lessonName": "Java",
+                "creditScore": 16,
+                "compulsory": true
+            }
+        ],
+        "day": "WEDNESDAY"
+    },
+    "message": "Created Lesson Program",
+    "httpStatus": "CREATED"
+}
+     */
+
+
+
+
+
+
+    /*
+     Faker faker=new Faker();
     Response response;
     US04PostPojo expectedData=new US04PostPojo();
     US04ResponsePojo actualDate;
@@ -66,4 +144,5 @@ public class US10StepDefinitionApi {
         Assert.assertEquals(expectedData.getSurname(),actualDate.getObject().getSurname());
         Assert.assertEquals("Dean Saved",actualDate.getMessage());
     }
+     */
 }

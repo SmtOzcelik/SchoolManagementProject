@@ -1,4 +1,4 @@
-@US22Admin
+@dean
 
 Feature: US22 Admin ekleme E2E test
 

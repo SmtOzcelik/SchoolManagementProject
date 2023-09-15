@@ -1,4 +1,4 @@
-@US04_api
+@dean
 
 Feature: US04 Api dogrulama testleri
 

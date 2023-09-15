@@ -1,4 +1,4 @@
-@US04Dean
+@dean
 
 Feature: US04 dean ekleme E2E test
 

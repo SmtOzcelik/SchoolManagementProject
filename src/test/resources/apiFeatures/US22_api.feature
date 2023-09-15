@@ -1,4 +1,4 @@
-@US22_api
+@admin
 
   Feature: US22 Api Doğrulama Testleri
 

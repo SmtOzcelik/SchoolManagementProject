@@ -17,14 +17,6 @@ public class Authentication {
             token.put("password", passWord);
             token.put("username", userName);
 
-
-
-
- 
-
-
-
-
             Response response = given().contentType(ContentType.JSON).body(token).when().post(urlswagger);
             //response.prettyPrint();
 

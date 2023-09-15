@@ -1,4 +1,4 @@
-@US04Api_E2E
+@dean
 
   Feature: US04 E2E Test
 

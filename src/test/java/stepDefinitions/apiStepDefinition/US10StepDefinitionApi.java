@@ -1,6 +1,5 @@
 package stepDefinitions.apiStepDefinition;
 
-import baseUrl.ManagementSchoolUrl;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import pojos.US10Pojo.US10_ViceDeanResponsePojo;
 import pojos.US10Pojo.US10_ViceDeanPostPojo;
+
 import static baseUrl.ManagementSchoolUrl.spec;
 
 import java.util.Collections;

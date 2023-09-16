@@ -10,6 +10,7 @@ import static org.junit.Assert.assertTrue;
 public class US08StepDefinition {
     ErolPages erol = new ErolPages();
     Faker faker = new Faker();
+    String lessonName;
 
     @And("User clicks to Lessons button")
     public void userClicksToLessonsButton() {
@@ -18,7 +19,8 @@ public class US08StepDefinition {
 
     @And("User writes a Lesson Name in Lesson Name Box")
     public void userWritesALessonNameInLessonNameBox() {
-        erol.lessonNameBox.sendKeys(faker.programmingLanguage().name());
+        lessonName = faker.programmingLanguage().name();
+        erol.lessonNameBox.sendKeys(lessonName);
 
     }
 
@@ -50,7 +52,7 @@ public class US08StepDefinition {
     @And("User clicks compulsory radio button as nonchecked")
     public void userClicksCompulsoryRadioButtonAsNonchecked() {
 
-            erol.compulsoryButton.click();
+        erol.compulsoryButton.click();
 
     }
 }

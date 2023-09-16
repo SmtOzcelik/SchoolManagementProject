@@ -14,6 +14,7 @@ public class ErolPages {
     @FindBy(xpath = "//a[@class='header_link ms-2']")
     public WebElement login;
 
+
     @FindBy(xpath = "//*[@id='username']")
     public WebElement username;
 
@@ -53,6 +54,9 @@ public class ErolPages {
 
     @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement lessonCreatedAlert;
+
+    @FindBy(xpath = "//div[text()='Vice dean Saved']")
+    public WebElement viceDeanSaved;
 
 
 }

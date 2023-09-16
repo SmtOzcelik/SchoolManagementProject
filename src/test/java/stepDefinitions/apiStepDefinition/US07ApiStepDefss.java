@@ -17,7 +17,7 @@ public class US07ApiStepDefss {
         spec.pathParams("first","contactMessages","second","getAll").
                 queryParams("size","10000");
 
-        response = given(spec).get("{first}/{second}");
+        response = given(spec).when().get("{first}/{second}");
         response.prettyPrint();
     }
 

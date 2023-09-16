@@ -1,5 +1,6 @@
 package stepDefinitions.apiStepDefinition;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +19,7 @@ public class US24StepDefApi {
     US24AdminPostPojo expectedData;
     Response response;
     US24ResponsePojo actualData;
+    Faker faker = new Faker();
 
 
     @Given("Ogretmen olusturmak icin POST request hazirligi yapilir.")
@@ -29,10 +31,15 @@ public class US24StepDefApi {
     @And("gonderilecek ogretmen bilgileri hazirlanir.")
     public void gonderilecekOgretmenBilgileriHazirlanir() {
         //Set the expected data
-        expectedData = new US24AdminPostPojo("1997-12-04", "ABD", "denemebahadir.1375@gmail.com", "MALE",
+        expectedData = new US24AdminPostPojo("1997-12-09",
+                faker.address().city(),
+                faker.internet().emailAddress(), "MALE",
                 true,
                 Collections.singletonList("5"),
-                "BAHADIR", "Aa123456", "333-212-2141", "120-20-9316", "GUNUVAR", "teacherBahadir06");
+                faker.name().firstName(), faker.regexify("[A-Z][a-z]{1}[0-9]{6}"),
+                faker.regexify("[0-9]{3}-[0-9]{3}-[0-9]{4}"),
+                faker.regexify("[0-9]{3}-[0-9]{2}-[0-9]{4}"),
+                faker.name().lastName(), faker.name().username());
 
     }
 
@@ -40,6 +47,7 @@ public class US24StepDefApi {
     public void ogretmenOlusturmakIcinPOSTRequestGonderilir() {
         //Send the request
         response = given(spec).body(expectedData).when().post("{first}/{second}");
+        response.prettyPrint();
     }
 
     @Then("olusturulan ogretmen bilgileri dogrulanir.")

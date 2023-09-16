@@ -1,39 +1,36 @@
 package hook;
 
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.specification.RequestSpecification;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import utilities.*;
+import utilities.ConfigReader;
+import utilities.Driver;
+import java.time.Duration;
+import static baseUrl.ManagementSchoolUrl.setup;
+
+
 
 public class Hooks {
-
-    // Cucumber'da feature ve stepdefinitions eslesmesi class seviyesinde degil
-    // package seviyesindedir
-    // dolayisiyla @Before ve @After stepdefinitions packagesi altinda herhangibir yerde olabilir
-    // ancak uygulamada genellikle Hooks isminde bir class olusturup onun icinde konulur
-
-
-
-    RequestSpecification spec;
-    @Before(value = "@us01")
-    public void setUp(){
-        spec = new RequestSpecBuilder().setBaseUri("https://managementonschools.com/").build();
+    @Before
+    public void setUp() {
+        setup();
+        Driver.getDriver().get(ConfigReader.getProperty("manage_Url"));
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        Driver.getDriver().manage().window().maximize();
     }
 
     @After
-    public void tearDown(Scenario scenario){
-        final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+    public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png","screenshots");
+            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+            scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/jpeg", "scenario_" + scenario.getName());
+            Driver.closeDriver();
         }
         Driver.closeDriver();
 
 
     }
-
 }
-

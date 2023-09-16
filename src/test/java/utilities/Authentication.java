@@ -24,7 +24,9 @@ public class Authentication {
     public static String generateToken() {
 
 
-            String body = "{ \"password\": \"Ab142790\", \"username\": \"AdminSamet\" }";
+
+            String body = "{ \"password\": \"Aa123456\", " +
+                    "\"username\": \"AdminErol11\" }";
 
             Response response = given()
                     .body(body)

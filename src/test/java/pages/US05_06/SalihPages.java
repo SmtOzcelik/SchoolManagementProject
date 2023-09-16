@@ -8,7 +8,7 @@ import utilities.Driver;
 public class SalihPages {
     public SalihPages() {
         PageFactory.initElements(Driver.getDriver(), this);
-}
+    }
 
     @FindBy(xpath = "//*[@href='/login']")
     public WebElement login;
@@ -33,6 +33,7 @@ public class SalihPages {
 
     @FindBy(xpath = "//h5")
     public WebElement deanListYazisi;
+
 
     @FindBy(xpath = "//tbody/tr[1]/td[6]/span[1]/button[1]")
     public WebElement deanTeam11Edit;
@@ -72,14 +73,6 @@ public class SalihPages {
 
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
     public WebElement atLeastEightCharacters; //salih
-
-
-
-
-
-
-
-
 
 
 

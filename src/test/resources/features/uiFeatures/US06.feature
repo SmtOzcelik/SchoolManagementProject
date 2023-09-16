@@ -1,3 +1,4 @@
+
 Feature:Dean olarak Vice Dean ile ilgili işlemler yapma
 
   Background:
@@ -90,6 +91,7 @@ Feature:Dean olarak Vice Dean ile ilgili işlemler yapma
     And Kullanici submit butona tiklar
     And Kullanici 2 saniye bekler
     Then Kullanici One number yazisini gordugunu dogrular ve ekran goruntusunu alir.
+
 
 
 

@@ -18,7 +18,6 @@ Feature:Dean olarak Vice Dean ile ilgili işlemler yapma
     And kullanici "ViceDeanUserName" girer
     And kullanici "ViceDeanPassword" girer.Password en az sekiz karakterden olusmalidir,buyuk harf, kucuk harf ve bir rakam icermelidir.
     And Kullanici submit butona tiklar
-    And Kullanici 1 saniye bekler
     Then Kullanici ekleme isleminin basarili olugunu dogrular
 
 

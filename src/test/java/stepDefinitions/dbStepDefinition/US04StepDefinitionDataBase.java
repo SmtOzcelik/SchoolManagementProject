@@ -61,10 +61,7 @@ public class US04StepDefinitionDataBase {
     public void kullaniciAnaSayfaGirer(String arg0) {
         Driver.getDriver().get(arg0);
     }
-    @Then("Kullanici Login  tiklar")
-    public void kullaniciLoginTiklar() {
-        ReusableMethods.clickElementByJS(scholl.anasayfaLogin);
-    }
+
     @And("Kullanici User Name girer")
     public void kullaniciUserNameGirer() {
         scholl.userName.sendKeys("AdminSamet");

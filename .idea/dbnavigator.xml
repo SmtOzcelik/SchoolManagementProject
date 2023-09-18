@@ -7,8 +7,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="2f72afdd-bb7d-45fe-8933-965b01f70b3b">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from lesson where lesson_name = 'Calculus'
-SELECT * FROM dean WHERE username='DeanTeam11']]></console>
+      <console name="Connection" type="STANDARD" schema="school_management" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -143,13 +142,13 @@ SELECT * FROM dean WHERE username='DeanTeam11']]></console>
       </filters>
       <sorting>
         <object-type name="COLUMN" sorting-type="NAME" />
-        <object-type name="FUNCTİON" sorting-type="NAME" />
+        <object-type name="FUNCTION" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
-        <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
-        <object-type name="VİEW" editor-type="SELECTION" />
+        <object-type name="VIEW" editor-type="SELECTION" />
         <object-type name="PACKAGE" editor-type="SELECTION" />
         <object-type name="TYPE" editor-type="SELECTION" />
       </default-editors>
@@ -160,24 +159,24 @@ SELECT * FROM dean WHERE username='DeanTeam11']]></console>
           <object-type name="SCHEMA" enabled="true" />
           <object-type name="USER" enabled="false" />
           <object-type name="ROLE" enabled="false" />
-          <object-type name="PRİVİLEGE" enabled="false" />
+          <object-type name="PRIVILEGE" enabled="false" />
           <object-type name="CHARSET" enabled="false" />
           <object-type name="TABLE" enabled="true" />
-          <object-type name="VİEW" enabled="true" />
-          <object-type name="MATERİALİZED VİEW" enabled="true" />
-          <object-type name="İNDEX" enabled="true" />
-          <object-type name="CONSTRAİNT" enabled="true" />
-          <object-type name="DATASET TRİGGER" enabled="true" />
-          <object-type name="DATABASE TRİGGER" enabled="true" />
+          <object-type name="VIEW" enabled="true" />
+          <object-type name="MATERIALIZED VIEW" enabled="true" />
+          <object-type name="INDEX" enabled="true" />
+          <object-type name="CONSTRAINT" enabled="true" />
+          <object-type name="DATASET TRIGGER" enabled="true" />
+          <object-type name="DATABASE TRIGGER" enabled="true" />
           <object-type name="SYNONYM" enabled="false" />
           <object-type name="SEQUENCE" enabled="true" />
           <object-type name="PROCEDURE" enabled="true" />
-          <object-type name="FUNCTİON" enabled="true" />
+          <object-type name="FUNCTION" enabled="true" />
           <object-type name="PACKAGE" enabled="true" />
           <object-type name="TYPE" enabled="true" />
-          <object-type name="DİMENSİON" enabled="false" />
+          <object-type name="DIMENSION" enabled="false" />
           <object-type name="CLUSTER" enabled="false" />
-          <object-type name="DBLİNK" enabled="true" />
+          <object-type name="DBLINK" enabled="true" />
         </lookup-objects>
         <force-database-load value="false" />
         <prompt-connection-selection value="true" />

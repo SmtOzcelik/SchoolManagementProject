@@ -15,10 +15,20 @@ import org.junit.runner.RunWith;
         "rerun:TestOutput/failed_scenario.txt"},
         //rerun ile belirttiğimiz dosyada fail olan senaryolar tutulur.
 <<<<<<< HEAD
+<<<<<<< HEAD
         features = "src/test/resources/features/uiFeatures",
         glue = {"stepDefinitions/uiStepDefs"},
         tags = "@fatih",
 =======
+        features = "src/test/resources",
+        glue = {"stepDefinitions/stepDefinitions", "hook" },
+        tags = "@US07Api",
+>>>>>>> main
+=======
+
+        features = "src/test/resources/features/uiFeatures",
+        glue = {"stepDefinitions/uiStepDefs"},
+        tags = "@fatih",
         features = "src/test/resources",
         glue = {"stepDefinitions/stepDefinitions", "hook" },
         tags = "@US07Api",

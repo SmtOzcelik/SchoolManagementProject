@@ -4,7 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
+
 import pojos.US08Pojo.US08LessonPojo;
+
+
+import pojos.US08__POJOSXX.US08HistoryLessonPojo;
 
 
 import static baseUrl.ManagementSchoolUrl.spec;

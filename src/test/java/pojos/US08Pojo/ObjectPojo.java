@@ -8,7 +8,7 @@ public class ObjectPojo implements Serializable {
 	private int creditScore;
 	private String compulsory;
 
-	public ObjectPojo() {
+	public ObjectPojo() {//
 	}
 
 

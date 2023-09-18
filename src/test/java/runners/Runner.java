@@ -14,6 +14,10 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         //rerun ile belirttiğimiz dosyada fail olan senaryolar tutulur.
+
+        features = "src/test/resources/features/uiFeatures",
+        glue = {"stepDefinitions/uiStepDefs"},
+        tags = "@fatih",
         features = "src/test/resources",
         glue = {"stepDefinitions/stepDefinitions", "hook" },
         tags = "@US07Api",

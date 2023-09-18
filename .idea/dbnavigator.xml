@@ -7,8 +7,13 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="2f72afdd-bb7d-45fe-8933-965b01f70b3b">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from lesson where lesson_name = 'Calculus'
-SELECT * FROM dean WHERE username='DeanTeam11']]></console>
+      <console name="Connection" type="STANDARD" schema="school_management" session="Main" />
+<<<<<<< HEAD
+=======
+    </connection>
+    <connection id="58fb7953-a34b-4342-933b-0c7b2e89a10a">
+      <console name="managementonSchools" type="STANDARD" schema="school_management" session="Main" />
+>>>>>>> main
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">

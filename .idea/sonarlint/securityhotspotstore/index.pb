@@ -431,3 +431,9 @@ a
 0src/test/java/pojos/US08_E2EPojo/ObjectPojo.java,6\6\66c9a50b607e2fef707b7fb54cc9f371d42b01d4
 m
 =src/test/java/stepDefinitions/uiStepDefs/US08_E2EStepDef.java,e\1\e1ca18f0f598049c316e46918a3e16d0ce94dc9c
+[
++src/test/java/pages/US05_06/SalihPages.java,1\1\11284976bb7c4841753d6ff40d8ff410cee651c2
+s
+Csrc/test/java/stepDefinitions/apiStepDefinition/US10StepDefApi.java,d\6\d68e776de8192ebf86523768862f37f6589719b4
+v
+Fsrc/test/java/stepDefinitions/uiStepDefs/US04StepDefinitionApi2E2.java,3\0\3069610cd1397514862e454b3413ff34b117155f

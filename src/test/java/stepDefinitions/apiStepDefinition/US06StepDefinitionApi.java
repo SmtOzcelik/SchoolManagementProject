@@ -76,6 +76,15 @@ public class US06StepDefinitionApi {
 
          */
     }
+
+    @Then("Kullanici dogrulama yapar.\\(negatif Test)")
+    public void kullaniciDogrulamaYaparNegatifTest() {
+
+        Assert.assertEquals(400,response.statusCode());
+
+
+
+    }
 }
 
 

@@ -31,7 +31,7 @@ public class US07StepDefinition {
     }
     @Then("User enters an adminUsername, password and then is logged in.")
     public void userEntersAnUsernamePasswordAndThenIsLoggedIn() {
-        erol.username.sendKeys(ConfigReader.getProperty("adminUserName"), Keys.TAB, ConfigReader.getProperty("password"),
+        erol.username.sendKeys(ConfigReader.getProperty("usernameAdmin"), Keys.TAB, ConfigReader.getProperty("password"),
                 Keys.TAB, Keys.ENTER);
     }
 

@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         //rerun ile belirttiğimiz dosyada fail olan senaryolar tutulur.
         features = "src/test/resources",
         glue = {"stepDefinitions/stepDefinitions", "hook" },
-        tags = "@Api",
+        tags = "@US07Api",
         dryRun = false,//-->true seçersek scenarioları kontrol eder browser'ı çalıştırmaz
         monochrome = true//-->true kullanırsak konsoldaki çıktılar tek renk(siyah) olur
 )

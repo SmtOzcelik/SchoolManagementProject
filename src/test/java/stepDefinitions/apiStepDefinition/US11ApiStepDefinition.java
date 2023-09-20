@@ -81,13 +81,4 @@ public class US11ApiStepDefinition {
 
     }
 
-    @Then("Do Assertion creat lesson program")
-    public void do_assertion_creat_lesson_program() {
-        //https://managementonschools.com/app/lessonPrograms/getById/1
-        spec.pathParams("first", "lessonPrograms", "second", "getById", "third", actualLessonProgramId);
-        Response response = given(spec).get("{first}/{second}/{third}");
-
-        assertEquals(response.statusCode(), 200);
-    }
-
 }

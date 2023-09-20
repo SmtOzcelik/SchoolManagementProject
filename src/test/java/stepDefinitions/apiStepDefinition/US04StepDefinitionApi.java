@@ -23,10 +23,4 @@ public class US04StepDefinitionApi {
     US04PostPojo expectedData=new US04PostPojo();
     US04ResponsePojo actualDate;
 
-
-
-
-
-
-
 }

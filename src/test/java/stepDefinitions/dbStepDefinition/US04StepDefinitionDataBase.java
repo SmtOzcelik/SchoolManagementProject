@@ -62,45 +62,6 @@ public class US04StepDefinitionDataBase {
         Driver.getDriver().get(arg0);
     }
 
-    @And("Kullanici User Name girer")
-    public void kullaniciUserNameGirer() {
-        scholl.userName.sendKeys("AdminSamet");
-    }
-
-    @And("Kullanici Password girer")
-    public void kullaniciPasswordGirer() {
-        scholl.password.sendKeys("Ab142790");
-    }
-
-    @And("Kullanici Login butonuna tiklar")
-    public void kullaniciLoginButonunaTiklar() {
-        scholl.loginButton.click();
-    }
-
-    @And("Kullanici Menu tiklar")
-    public void kullaniciMenuTiklar() {
-        scholl.menuButon.click();
-        ReusableMethods.waitFor(1);
-    }
-
-    @And("Kullanici Dean Management tiklar")
-    public void kullaniciDeanManagementTiklar() {
-        scholl.deanManagementButon.click();
-        ReusableMethods.waitFor(2);
-    }
-    @And("Kullanici submit butonu tiklar")
-    public void kullaniciSubmitButonuTiklar() {
-
-        ReusableMethods.clickElementByJS(scholl.submitButon);
-        ReusableMethods.waitFor(1);
-    }
-
-    @And("Kullanici Dean Saved uyarisinin görünürlügünü test eder")
-    public void kullaniciDeanSavedUyarisininGörünürlügünüTestEder() {
-        //ReusableMethods.waitFor(1);
-        Assert.assertTrue(scholl.alertMessage.getText().contains("Saved"));
-    }
-
     @Given("Kullanici datebase baglantisini oluşturur Dean")
     public void kullaniciDatebaseBaglantisiniOluşturur() throws SQLException {
         connection = DriverManager.getConnection("jdbc:postgresql://managementonschools.com:5432/school_management", "select_user", "43w5ijfso");

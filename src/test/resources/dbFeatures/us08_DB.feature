@@ -1,4 +1,4 @@
-@US08DB
+@vicedean @US08DB
 Feature: ViceDean can create lesson
 
   Scenario Outline: Verify lesson that is created

@@ -20,6 +20,5 @@ import org.junit.runner.RunWith;
         dryRun = false,//-->true seçersek scenarioları kontrol eder browser'ı çalıştırmaz
         monochrome = true//-->true kullanırsak konsoldaki çıktılar tek renk(siyah) olur
 )
-
 public class Runner {
 }

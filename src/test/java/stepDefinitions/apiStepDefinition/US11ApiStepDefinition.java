@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static baseUrl.ManagementSchoolUrl.spec;
+
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 

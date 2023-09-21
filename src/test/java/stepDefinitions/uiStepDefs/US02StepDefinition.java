@@ -29,7 +29,7 @@ public class US02StepDefinition {
 
     @And("Admin olarak username kutusununa {string} girer")
     public void adminOlarakUsernameKutusununaGirer(String arg0) {
-        alpg.username.sendKeys(ConfigReader.getProperty("username"));
+        alpg.username.sendKeys(ConfigReader.getProperty("usernameAdmin"));
     }
     @And("Admin olarak password kutusuna {string} girer")
     public void adminOlarakPasswordKutusunaGirer(String arg0) {
@@ -78,7 +78,7 @@ public class US02StepDefinition {
     public void adminGuest_UserUserNameBilgileriniGorur() {
         ReusableMethods.pageUp();
         Assert.assertTrue(alpg.guestUserUserNameText.isDisplayed());
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(6);
         //ReusableMethods.clickElementByJS(alpg.logoutButton);
         //ReusableMethods.bekle(2);
         //ReusableMethods.clickElementByJS(alpg.logoutButtonKapat);

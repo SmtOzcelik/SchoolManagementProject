@@ -66,8 +66,7 @@ public class US01StepDefinition {
         fakeUserName = faker.name().firstName();
         alpg.usernamep.sendKeys(fakeUserName);
         ReusableMethods.bekle(1);
-        ReusableMethods.pageDown();
-        alpg.passwordp.sendKeys("Mg123456",Keys.TAB);
+        alpg.passwordp.sendKeys("Ab123456",Keys.TAB);
         ReusableMethods.bekle(1);
     }
     @Then("Kullanici at least iki character uyarisini goruntuler")
@@ -86,11 +85,9 @@ public class US01StepDefinition {
         ReusableMethods.bekle(1);
         alpg.birthPlace.sendKeys(faker.address().city());
         ReusableMethods.bekle(1);
-
         alpg.phoneNumber.sendKeys(faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(1000,9999));
         //ReusableMethods.arrowDown();
         ReusableMethods.pageDown();
-
         alpg.female.click();
         ReusableMethods.bekle(1);
         alpg.dateOfBirth.sendKeys("10/10/2000");
@@ -99,10 +96,9 @@ public class US01StepDefinition {
         ReusableMethods.bekle(1);
         fakeUserName = faker.name().firstName();
         alpg.usernamep.sendKeys(fakeUserName);
-        //ReusableMethods.bekle(1);
-        ReusableMethods.pageDown();
-        alpg.passwordp.sendKeys("Mg123456");
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
+        alpg.passwordp.sendKeys("Ab123456");
+        ReusableMethods.bekle(1);
     }
     @Given("Kullanici Birth place kutusuna {string} girer")
     public void kullaniciBirthPlaceKutusunaGirer(String birthplace) {
@@ -127,7 +123,7 @@ public class US01StepDefinition {
         fakeUserName = faker.name().firstName();
         alpg.usernamep.sendKeys(fakeUserName);
         ReusableMethods.bekle(1);
-        alpg.passwordp.sendKeys("Mg123456",Keys.TAB);
+        alpg.passwordp.sendKeys("Ab123456",Keys.TAB);
         ReusableMethods.bekle(1);
     }
     @Given("Kullanici Phone Number kutusuna {string} girer")
@@ -162,7 +158,7 @@ public class US01StepDefinition {
         fakeUserName = faker.name().firstName();
         alpg.usernamep.sendKeys(fakeUserName);
         ReusableMethods.bekle(1);
-        alpg.passwordp.sendKeys("Mg123456",Keys.TAB);
+        alpg.passwordp.sendKeys("Ab123456",Keys.TAB);
         ReusableMethods.bekle(1);
 
     }
@@ -209,9 +205,8 @@ public class US01StepDefinition {
         fakeUserName = faker.name().firstName();
         alpg.usernamep.sendKeys(fakeUserName);
         ReusableMethods.bekle(1);
-        alpg.passwordp.sendKeys("Mg123456");
-        ReusableMethods.pageDown();
-        ReusableMethods.bekle(2);
+        alpg.passwordp.sendKeys("Ab123456");
+        ReusableMethods.bekle(1);
     }
     @Then("kullanici gecmis tarih olmali uyarisini goruntuler")
     public void kullaniciGecmisTarihOlmaliUyarisiniGoruntuler() {
@@ -222,7 +217,7 @@ public class US01StepDefinition {
     @Given("Kullanici SSN kutusuna {string} girer")
     public void kullaniciSSNKutusunaGirer(String ssn) {
         alpg.ssn.sendKeys(ssn);
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
     }
 
     @Then("Kullanici enter valid SSN number alertini goruntulemez")
@@ -233,9 +228,9 @@ public class US01StepDefinition {
 
     @Then("Kullanici please enter valid SSN number alertini goruntuler")
     public void kullaniciPleaseEnterValidSSNNumberAlertiniGoruntuler() {
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(3);
         assertTrue(alpg.pleaseEnterValidSsnNumber.isDisplayed());
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(3);
     }
 
     @Then("Kullanici minimum onbir character alertini goruntuler")
@@ -297,7 +292,7 @@ public class US01StepDefinition {
         ReusableMethods.bekle(1);
         alpg.ssn.sendKeys(faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999));
         ReusableMethods.bekle(1);
-        alpg.passwordp.sendKeys("Mg123456",Keys.TAB);
+        alpg.passwordp.sendKeys("Ab123456",Keys.TAB);
         ReusableMethods.bekle(1);
 
     }
@@ -350,7 +345,7 @@ public class US01StepDefinition {
     public void kullaniciGuestUserRegisteredMesajiniGorerekBasariliKayitYapabildiginiDogrular() {
         //ReusableMethods.bekle(1);
         assertTrue(alpg.guestUserRegistered.isDisplayed());
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
     }
     @And("Kullanici guest user registered mesajini gormeyerek basarili kayit yapamadigini dogrular")
     public void kullaniciGuestUserRegisteredMesajiniGormeyerekBasariliKayitYapamadiginiDogrular() {
@@ -360,7 +355,7 @@ public class US01StepDefinition {
     @Then("Kullanici register butonuna tiklar")
     public void kullaniciRegisterButonunaTiklar() {
         alpg.register.click();
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
     }
 
 

@@ -1,9 +1,9 @@
-@guestuser
+@guestUser
 Feature: Guest_User_Goruntuleme_Silme
   Background:
     Given Admin olarak "url" adresine gider
     Then Admin olarak Login ikonunu tiklar
-    And Admin olarak username kutusununa "username" girer
+    And Admin olarak username kutusununa "usernameAdmin" girer
     And Admin olarak password kutusuna "password" girer
     And Admin olarak Login butonunu tiklar
     And Admin olarak Menu butonuna basar

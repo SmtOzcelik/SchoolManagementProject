@@ -1,4 +1,4 @@
-@register
+@guestRegister
 Feature: Aday ogrenci sisteme kayit olabilmeli (Register)
 
   Background:

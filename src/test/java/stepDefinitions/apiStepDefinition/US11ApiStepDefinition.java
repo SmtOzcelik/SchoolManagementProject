@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static baseUrl.ManagementSchoolUrl.spec;
+
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
@@ -41,15 +42,6 @@ public class US11ApiStepDefinition {
         spec.pathParams("first", "lessonPrograms", "second", "delete","third",actualLessonProgramId);
         Response response = given(spec).delete("{first}/{second}/{third}");
         assertEquals(200, response.statusCode());
-    }
-
-    @Then("Do Assertion creat lesson program")
-    public void do_assertion_creat_lesson_program() {
-        //https://managementonschools.com/app/lessonPrograms/getById/1
-        spec.pathParams("first", "lessonPrograms", "second", "getById", "third", actualLessonProgramId);
-        Response response = given(spec).get("{first}/{second}/{third}");
-
-        assertEquals(response.statusCode(), 200);
     }
 
 }

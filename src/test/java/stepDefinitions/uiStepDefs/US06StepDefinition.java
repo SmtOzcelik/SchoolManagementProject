@@ -13,8 +13,9 @@ import utilities.ReusableMethods;
 import java.io.IOException;
 
 public class US06StepDefinition {
-    SalihPages sManagement=new SalihPages();
+   public static SalihPages sManagement=new SalihPages();
     Faker faker=new Faker();
+    public static String fakeSsn;
 
     @And("Kullanici username alanina tiklar ve {string} girer")
     public void kullaniciUsernameAlaninaTiklarVeGirer(String deanUserName) {
@@ -36,7 +37,7 @@ public class US06StepDefinition {
 
     @And("Kullanici {string} girer. SSN; ucuncu ve besinci rakamdan sonra - icermeli ve dokuz rakamdan olusmalidir.")
     public void kullaniciGirerSSNUcuncuVeBesinciRakamdanSonraIcermeliVeDokuzRakamdanOlusmalidir(String ViceDeanSSNnNo) {
-        String fakeSsn = faker.idNumber().ssnValid();
+         fakeSsn = faker.idNumber().ssnValid();
         sManagement.ViceDeanSSNnNo.sendKeys(fakeSsn,Keys.TAB);
 
     }

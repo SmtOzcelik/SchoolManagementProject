@@ -5,10 +5,22 @@
     <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="false" />
+    <autoscroll-from-editor value="true" />
+    <show-object-properties value="true" />
+    <loaded-nodes />
+  </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="2f72afdd-bb7d-45fe-8933-965b01f70b3b">
       <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from lesson where lesson_name = 'Calculus'
 SELECT * FROM dean WHERE username='DeanTeam11']]></console>
+<<<<<<< HEAD
+    </connection>
+    <connection id="58fb7953-a34b-4342-933b-0c7b2e89a10a">
+      <console name="managementonSchools" type="STANDARD" schema="public" session="Main"><![CDATA[select * from vice_dean]]></console>
+=======
+>>>>>>> main
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -16,6 +28,16 @@ SELECT * FROM dean WHERE username='DeanTeam11']]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="58fb7953-a34b-4342-933b-0c7b2e89a10a" dataset="public.guest_user" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.ObjectQuickFilterManager">
+    <last-used-operator value="EQUAL" />
+    <filters />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -589,5 +611,8 @@ SELECT * FROM dean WHERE username='DeanTeam11']]></console>
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
   </component>
 </project>

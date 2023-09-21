@@ -108,13 +108,6 @@ public class US04StepDefinition {
         ReusableMethods.waitFor(1);
     }
 
-    @And("Kullanici Dean Saved uyarisinin görünürlügünü test eder")
-    public void kullaniciDeanSavedUyarisininGörünürlügünüTestEder() {
-        //ReusableMethods.waitFor(1);
-        Assert.assertTrue(scholl.alertMessage.getText().contains("Saved"));
-    }
-
-
     @And("Kullanici  gecersiz eksik {string}Phone numarasi girer")
     public void kullaniciGecersizEksikPhoneNumarasiGirer(String arg0) {
         scholl.phoneNumberBox.sendKeys(arg0);

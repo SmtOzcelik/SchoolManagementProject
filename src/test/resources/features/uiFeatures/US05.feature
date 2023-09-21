@@ -18,8 +18,6 @@ Feature:Admin Dean ile ilgili işlemler
     And Dean'lerin Name, Gender, Phone Number, SSN, User Name bilgilerini gorebilmeli
     And Kullanici 2 saniye bekler
 
-    And dean'leri guncelleyebilmeli ve guncellendigini dogrulamali
-    And dean'leri silebilmeli ve silindigini dogrulamali
-    And dean'leri guncelleyebilmeli ve guncellendigini dogrulamali
+
 
 

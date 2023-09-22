@@ -35,6 +35,10 @@ public class Authentication {
             //response.prettyPrint();
             return response.jsonPath().getString("token");
         }
+    public static String generateTokenViceDean() {
+        Response response =  given().contentType(ContentType.JSON).accept("application/json").accept("*/*").body("{\"password\": \"12345678\",\"username\": \"mrsnice\"}").post("https://managementonschools.com/app/auth/login");
+        return response.jsonPath().getString("token");
+    }
 
 
 }

@@ -59,3 +59,14 @@ public class US01ApiStepDefs {
 
     }
 }
+//            "id": 911,
+//            "username": "Lissette7",
+//            "ssn": "383-51-8589",
+//            "name": "Mel4",
+//            "surname": "Barrows",
+//            "birthDay": "1983-11-13",
+//            "birthPlace": "Mel4",
+//            "phoneNumber": "815-747-6238",
+//            "gender": "FEMALE"
+//        },
+//1368

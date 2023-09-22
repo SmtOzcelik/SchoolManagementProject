@@ -51,22 +51,23 @@ public class US02ApiStepDefs {
        assertEquals(expectedData.getUsername(),actualUsername);
    }
 
-//    {
-//        "id": 229,
-//            "username": "mhmmmmmmm",
-//            "ssn": "100-22-9955",
-//            "name": "mehmett",
-//            "surname": "grbz",
-//            "birthDay": "2000-10-10",
-//            "birthPlace": "batch129",
-//            "phoneNumber": "252-200-5566",
-//            "gender": "MALE"
+//{
+//    "object": {
+//        "userId": 1366,
+//        "username": "emasu21",
+//        "name": "usame",
+//        "surname": "emasu",
+//        "birthDay": "2001-12-25",
+//        "ssn": "856-65-6559",
+//        "birthPlace": "usame",
+//        "phoneNumber": "246-663-6589",
+//        "gender": "MALE"
 //    },
     @Given("Admin silecegi Guest User bilgilerini delete request yapar")
     public void adminSilecegiGuestUserBilgileriniDeleteRequestYapar() {
-        //https://managementonschools.com/app/guestUser/delete/229
+        //https://managementonschools.com/app/guestUser/delete/1367
         //set the url
-        spec.pathParams("first", "guestUser", "second", "delete", "third", 775);
+        spec.pathParams("first", "guestUser", "second", "delete", "third", 1367);
 
         //send the request and get the response for DELETE
         response = given(spec).delete("{first}/{second}/{third}");

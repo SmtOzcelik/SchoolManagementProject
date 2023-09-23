@@ -13,9 +13,7 @@ import utilities.ReusableMethods;
 
 public class US02StepDefinition {
 
-
     AlperPages alpg = new AlperPages();
-
     @Given("Admin olarak {string} adresine gider")
     public void adminOlarakAdresineGider(String string) {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -79,10 +77,6 @@ public class US02StepDefinition {
         ReusableMethods.pageUp();
         Assert.assertTrue(alpg.guestUserUserNameText.isDisplayed());
         ReusableMethods.bekle(6);
-        //ReusableMethods.clickElementByJS(alpg.logoutButton);
-        //ReusableMethods.bekle(2);
-        //ReusableMethods.clickElementByJS(alpg.logoutButtonKapat);
-        //ReusableMethods.bekle(2);
     }
 
     @Given("Admin Guest_User Delete butonunu gorur")
@@ -102,6 +96,5 @@ public class US02StepDefinition {
         Assert.assertTrue(alpg.guestUserDeletedUyariMesaji.isDisplayed());
         ReusableMethods.bekle(1);
     }
-
 
 }

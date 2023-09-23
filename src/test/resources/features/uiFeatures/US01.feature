@@ -179,7 +179,7 @@ Feature: Aday ogrenci sisteme kayit olabilmeli (Register)
     Given Kullanici Password kutusuna "<password>" girer
     Given Kullanici password disindaki alanlar icin valid deger girer
     Then Kullanici username icin valid deger girer
-    And Kullanici register butonuna tiklar
+    Then Kullanici register butonuna tiklar
     And Kullanici guest user registered mesajini gorerek basarili kayit yapabildigini dogrular
     Examples:
       | password |
@@ -190,8 +190,8 @@ Feature: Aday ogrenci sisteme kayit olabilmeli (Register)
     Given Kullanici Password kutusuna "<password>" girer
     Given Kullanici password disindaki alanlar icin valid deger girer
     Then Kullanici username icin valid deger girer
-    And Kullanici register butonuna tiklar
-    And Kullanici minimum sekiz karakter uyarisini goruntuler
+    Then Kullanici register butonuna tiklar
+    Then Kullanici minimum sekiz karakter uyarisini goruntuler
     Examples:
       | password |
       | Ak42567  |
@@ -200,9 +200,7 @@ Feature: Aday ogrenci sisteme kayit olabilmeli (Register)
     Given Kullanici Password kutusuna "<password>" girer
     Given Kullanici password disindaki alanlar icin valid deger girer
     Then Kullanici username icin valid deger girer
-
-    And Kullanici register butonuna tiklar
-
+    Then Kullanici register butonuna tiklar
     And Kullanici guest user registered mesajini gormeyerek basarili kayit yapamadigini dogrular
     Examples:
       | password |

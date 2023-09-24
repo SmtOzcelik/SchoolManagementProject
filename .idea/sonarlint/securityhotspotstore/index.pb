@@ -437,3 +437,5 @@ s
 Csrc/test/java/stepDefinitions/apiStepDefinition/US10StepDefApi.java,d\6\d68e776de8192ebf86523768862f37f6589719b4
 v
 Fsrc/test/java/stepDefinitions/uiStepDefs/US04StepDefinitionApi2E2.java,3\0\3069610cd1397514862e454b3413ff34b117155f
+z
+Jsrc/test/java/stepDefinitions/apiStepDefinition/US11ApiStepDefinition.java,6\c\6c4943844120174d10d1bcea955762e11a9e83e1

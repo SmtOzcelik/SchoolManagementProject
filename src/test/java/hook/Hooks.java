@@ -50,10 +50,10 @@ public class Hooks {
         System.out.println("Before method for student");
         studentSetup();
     }
-
-
-
-
+    @Before("@guest")
+    public void beforeApiGuest(){ System.out.println("Before method for guest");
+        guestSetup();
+    }
     @After
     public void tearDown(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {

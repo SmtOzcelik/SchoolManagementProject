@@ -34,7 +34,7 @@ public class US05StepDefinition {
 
     @And("username alanina tiklar ve {string} girer")
     public void usernameAlaninaTiklarVeGirer(String username) {
-        schoolManagement.username.sendKeys(ConfigReader.getProperty("username"));
+        schoolManagement.username.sendKeys(ConfigReader.getProperty("usernameDean"));
 
     }
 

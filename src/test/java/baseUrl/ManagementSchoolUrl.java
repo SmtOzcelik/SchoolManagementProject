@@ -10,6 +10,8 @@ import utilities.ConfigReader;
 public class ManagementSchoolUrl extends Authentication {
 
     public static RequestSpecification spec;
+    public RequestSpecification spec2;
+
 
     public static void adminSetup() {
 
@@ -40,5 +42,20 @@ public class ManagementSchoolUrl extends Authentication {
         spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("usernameStudent"))).
                 setBaseUri("https://managementonschools.com/app").build();
     }
+
+    public static void guestSetup() {
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", generateToken(ConfigReader.getProperty("password"), ConfigReader.getProperty("GuestAdmin"))).
+                setBaseUri("https://managementonschools.com/app").build();
+    }
+    public void setUpViceDean() {
+
+        spec2 = new RequestSpecBuilder()
+                .setContentType(ContentType.JSON)
+                .setBaseUri("https://managementonschools.com/app")
+                .addHeader("Authorization",generateTokenViceDean())
+                .build();
+
+    }
+
 }
 
